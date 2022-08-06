@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'icons';
+  src:  url('fonts/icons.eot?4xsxvh');
+  src:  url('fonts/icons.eot?4xsxvh#iefix') format('embedded-opentype'),
+    url('fonts/icons.ttf?4xsxvh') format('truetype'),
+    url('fonts/icons.woff?4xsxvh') format('woff'),
+    url('fonts/icons.svg?4xsxvh#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="_icon-"], [class*=" _icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+._icon-arrow-down:before {
+  content: "\e900";
+}
+._icon-close:before {
+  content: "\e901";
+}
+._icon-insta:before {
+  content: "\e902";
+}
+._icon-lk:before {
+  content: "\e903";
+  color: #0088cf;
+}
+._icon-location:before {
+  content: "\e904";
+  color: #0088cf;
+}
+._icon-phone:before {
+  content: "\e905";
+  color: #0088cf;
+}
+._icon-telegram:before {
+  content: "\e906";
+}
+._icon-vk_black:before {
+  content: "\e907";
+}
