@@ -1,3 +1,148 @@
 //====================================================================================================
+.page {
+
+	&__rent {
+		@include adaptiveValue("margin-top",100 ,50 );
+	}
+}
+.rent {
+
+	&__container {
+		display: grid;
+		grid-template-columns: 52% 1fr;
+		@media (max-width:$mobile){
+			 display: block; 
+		}
+	}
+
+	&__content {
+		
+	}
+
+	&__title {
+		font-weight: 900;
+		@include adaptiveValue("font-size",42 ,30 );
+		line-height: math.div(52 , 42);
+		span{
+			color: $mainBlue;
+		}
+	}
+
+	&__subtitle {
+		font-weight: 500;
+		@include adaptiveValue("font-size",18 ,16 );
+		line-height: math.div(26 , 18);
+		color: #989898;
+		margin-top: rem(23);
+		@media (max-width:$mobile){
+			 display: inline-block;
+			 padding-right: rem(130); 
+		}
+	}
+
+	&__link {
+		margin-top: rem(75);
+		@media (max-width:$mobile){
+			 margin-top: rem(20);
+			 width: 100%; 
+			 text-align: center;
+		}
+	}
+
+	&__background {
+		position: relative;
+		margin-left:rem(-130);
+		@media (max-width:$mobile){
+			 margin-left: 0;
+		}
+		img{
+			@media (max-width:$mobile){
+				 max-width: 130%; 
+			}
+		}
+		&::before{
+			content:'';
+			position: absolute;
+			background: #F5F5F9;
+			border-radius: 40px;
+			transform: rotate(-45.62deg);
+			@include adaptiveValue("width",575 ,340 );
+			@include adaptiveValue("height",550 ,300 );
+			@include adaptiveValue("right",-76 ,-280,1920,320);
+			@include adaptiveValue("bottom",-18 ,50, 1920,320);
+			z-index: -1;
+			overflow: hidden;
+		}
+		&::after{
+			content:'';
+			position: absolute;
+			background: rgba(0, 136, 207, 0.12);
+			border-radius: 40px;
+			transform: rotate(-45.62deg);
+			@include adaptiveValue("width",575 ,340 );
+			@include adaptiveValue("height",550 ,300 );
+			@include adaptiveValue("right",-26 ,-230,1920,320);
+			@include adaptiveValue("bottom",-18 ,50, 1920,320);
+			right: -6px;
+			bottom: -18px;
+			z-index: -2;
+			overflow: hidden;
+		}
+	}
+}
+
+
+/*=======NoCredit=============*/
+.page {
+
+	&__nocredit {
+		@media (max-width:$tablet){
+			margin-top: rem(30);
+		}
+	}
+}
+.nocredit {
+
+	&__content {
+	}
+
+	&__title {
+		font-weight: 900;
+		font-size: rem(30);
+		line-height: math.div(65 , 30);
+	}
+
+	&__text {
+		font-weight: 500;
+		font-size: rem(18);
+		line-height: math.div(28 , 18);
+		width: 58%;
+		@media (max-width:$mobile){
+			 width: 100%;
+			 padding: 0px rem(10); 
+		}
+	}
+}
+.nocreidt {
+
+	&__tabs {
+		display: grid;
+		grid-template-columns: repeat(3,1fr);
+		gap: rem(15);
+	}
+}
+.tabs-nocredit {
+
+	&__item {
+		
+		text-align: center;
+	}
+
+	&__title {
+	}
+
+	&__advantages {
+	}
+}
 
 //====================================================================================================

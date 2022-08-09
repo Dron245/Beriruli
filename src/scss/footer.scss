@@ -132,9 +132,9 @@
 		}
 		display: inline-block;
 		position: absolute;
-		top: calc(0% - rem(19));
-		right: -15%;
-		transform: translateY(-50);
+		top: 50%;
+		right: -5%;
+		transform: translateY(-50%);
 		//margin-left: rem(40);
 		@media (max-width:$tablet){
 			display: none;
@@ -142,4 +142,26 @@
 	}
 }
 
+	.bottom-footer{
+		&__body{
+			position: relative;
+		}
+		&__cont{
+			width: 100%;
+		}
+		&__text{
+			justify-content: space-between;
+			@media (max-width:$mobile){
+				flex-direction: column;
+				gap: rem(8);
+			}
+			span{
+				margin-right: 0;
+				display: inline-block;
+				a{
+					text-decoration: underline;
+				}
+			}
+		}
+	}
 //====================================================================================================
