@@ -10,3 +10,12 @@
 	border-radius: rem(5);
 	color:white
 }
+
+.label{
+	font-weight: 500;
+	font-size: rem(11);
+	line-height: math.div(30 , 11);
+	background: rgba(252, 236, 79, 0.77);
+	border-radius: 5px;
+	padding:rem(2) rem(10);
+}
