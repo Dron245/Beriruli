@@ -161,6 +161,112 @@
 	}
 }
 
+//=========ADVANTAGE==============//
+
+.page {
+
+	&__advantages {
+		@include adaptiveValue("margin-top", 82, 25);
+		@include adaptiveValue("margin-bottom", 82, 25);
+	}
+}
+.advantages {
+
+	&__bottom {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		@include adaptiveValue("column-gap",65 ,20 );
+		@include adaptiveValue("row-gap", 38, 12);
+		@media (max-width:$mobile){
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__img {
+		transform: translateY(-14%);
+		flex: 0 0 rem(50);
+		display: flex;
+		justify-content: center;
+	}
+}
+.advatages {
+
+	&__top {
+	}
+}
+.advanages {
+
+	&__title {
+		font-weight: 900;
+		font-size: rem(30);
+		line-height: math.div(46 , 30);
+		span{
+			color: $mainBlue;
+		}
+		@include adaptiveValue("margin-bottom",45 ,28 );
+	}
+
+	&__statistic {
+		@include adaptiveValue("margin-bottom",45 ,28 );
+	}
+
+	&__item {
+		display: flex;
+		align-items: flex-start;
+	}
+
+	&__content {
+		padding: 0px rem(5);
+	}
+
+	&__subtitle {
+		font-weight: 700;
+		font-size: rem(20);
+		line-height: math.div(30 , 20);
+		margin-bottom: rem(15);
+	}
+
+	&__subtext {
+		font-size: rem(18);
+		line-height: math.div(28 , 18);
+	}
+}
+.statistic-advanages {
+
+	&__body {
+		background: #F5F5F9;
+		border: 1px solid #0088CF;
+		border-radius: 5px;
+		@media (min-width:$mobile){
+			display: flex;
+			justify-content: space-between 
+		}
+	}
+
+	&__item {
+		padding: rem(15) rem(25);
+		font-weight: 700;
+		font-size: rem(18);
+		line-height: 2;
+		@media (max-width:$mobile){
+			 padding: rem(25) rem(5);
+			 font-size: rem(16);
+			 line-height: math.div(26 , 16); 
+		}
+		&::before{
+			content: '';
+			background: url('../img/main/advantages/01.png') no-repeat center;
+			padding: rem(25) rem(25) rem(25) 0;
+			margin-right: rem(16);
+			/*width: 30px;
+			margin-right: 20px;*/
+		}
+		span{
+			color: $mainBlue
+		}
+	}
+}
+
 //=======CATALOGBU=============================================================================================
 .page {
 
@@ -213,8 +319,10 @@
 	}
 
 	&__slide {
+		border: 1px solid #E5E5E5;
+		border-radius: 0px 0px 5px 5px;
 		@media (min-width:$tablet){
-			flex: 1 1 33.333%; 
+			flex: 1 1 30%; 
 		}
 		
 	}
@@ -268,23 +376,42 @@
 	}
 
 	&__body {
+		
+		position: relative;
 	}
 
 	&__subtitle {
+		font-weight:500;
+		font-size:rem(18);
+		line-height: math.div(30 , 18);
+		color: $mainBlue;
+		padding: 0px rem(20);
+		margin-bottom: rem(10);
 	}
 
 	&__title {
+		font-weight: 900;
+		font-size: rem(20);
+		line-height: 1.5;
+		padding: 0px rem(20);
+		margin-bottom: rem(15);
 	}
 
 	&__year {
+		padding: 0px rem(20);
+		margin-bottom: rem(15);
 	}
 
 	&__detail {
+		padding: 0px rem(20);
+		margin-bottom: rem(25);
 	}
 
 	&__button {
-			width: 100%;
-			text-align: center;
+		//position: absolute;
+		width: 100%;
+		text-align: center;
+		
 	}
 }
 .label {
@@ -292,6 +419,11 @@
 .detail {
 
 	&__content {
+		display: flex;
+		justify-content: space-between;
+		font-weight: 500;
+		font-size: rem(16);
+		line-height: math.div(30 , 16);
 	}
 
 	&__text {
@@ -299,4 +431,104 @@
 
 	&__year {
 	}
+}
+
+//==========QUESTIONS========//
+
+.page {
+
+	&__questions {
+		background: #F5F5F9;
+		border-radius: 5px;
+		
+	}
+}
+.questions {
+
+	&__container{
+		@include adaptiveValue("margin-top", 50, 20);
+		@media (min-width:$mobile){
+			display: grid;
+			grid-template-columns: 50% 50%;
+			padding: rem(55) 0px;
+		}
+	}
+
+	&__content {
+		@media (min-width:$mobile){
+			 padding-right: rem(215);
+		}
+	}
+
+	&__title {
+		font-weight:900;
+		@include adaptiveValue("font-size", 36, 30);
+		line-height: math.div(46 , 36);
+		span{
+			color: $mainBlue;
+		}
+		@include adaptiveValue("margin-bottom", 35, 20);
+	}
+
+	&__text {
+		@include adaptiveValue("font-size", 18, 16);
+		@include adaptiveValue("line-height", 36, 26);
+		span{
+			font-weight: 900;
+		}
+		margin-bottom: rem(10);
+	}
+
+	&__tel {
+		font-weight: 900;
+		@include adaptiveValue("font-size", 24, 20);
+		line-height: math.div(45 , 24);
+		color: $mainBlue;
+	}
+
+	&__form {
+	}
+}
+
+.form-questions {
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		gap: rem(30);
+	}
+
+	&__input {
+		padding: rem(15) 10px rem(15) rem(30);
+		@media (max-width:$mobile){
+			padding: rem(15) 10px rem(15) rem(20);
+		}
+	}
+
+	&__send {
+		@media (min-width:$mobile){
+			display: flex;
+			justify-content: space-between;
+			align-items: center; 
+		}
+	}
+
+	&__button {
+		@media (min-width:$mobile){
+			flex: 0 0 50%; 
+		}
+	}
+}
+.checkbox {
+
+	&__input {
+	}
+
+	&__label {
+	}
+
+	&__text {
+	}
+}
+.button {
 }
