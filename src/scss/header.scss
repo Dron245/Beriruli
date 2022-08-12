@@ -490,6 +490,7 @@
 	// .menu__sublist
 
 	&__sublist {
+		
 		flex: 1 1 100%;
 		@media (max-width:$mobile){
 			._hover &{
@@ -497,6 +498,7 @@
 			} 
 		}
 		@media (min-width:$mobile){
+			background-color: #F5F5F9;
 			position: absolute;
 			z-index: 2;
 			top: 100%;

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Карточка товара"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page page_inner">
+				<div class="page__header">
+					<div class="page__container">
+						<nav class="page__bread bread">
+							<ul class="bread__list">
+								<li class="bread__item">
+									<a href="#" class="bread__link">Главная</a>
+								</li>
+								<li class="bread__item">
+									<a href="#" class="bread__link">Каталог авто</a>
+								</li>
+								<li class="bread__item">
+									<span class="bread__link">ВАЗ (LADA) 217230 (Приора хетчбек)</span>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="product">
+					<div class="product__container">
+						<div class="product__main main-product">
+							<div class="main-product__content content-product">
+								<h3 class="content-product__title">ВАЗ (Lada) 217230 (Приора Хетчбек)</h3>
+								<h4 class="content-product__subtitle">Код: 833</h4>
+								<div class="content-product__price price">
+									<h4 class="price__title">Цена</h4>
+									<div class="price__body">
+										<div class="price__item">
+											<div class="price__punkt price__punkt_weight">
+												<div class="price__name">Аренда с выкупом</div>
+												<div class="price__price">1 3000 руб</div>
+											</div>
+											<div class="price__punkt">
+												<div class="price__name">Рассрочка</div>
+												<div class="price__price">1 2000 руб</div>
+											</div>
+											<div class="price__punkt">
+												<div class="price__name">Наличные</div>
+												<div class="price__price">1 1000 руб</div>
+											</div>
+										</div>
+										<div class="price__item">
+											<div class="price__punkt">
+												<div class="price__name">Аренда с выкупом</div>
+												<div class="price__price price__punkt_weight">1 3000 руб</div>
+											</div>
+											<div class="price__punkt">
+												<div class="price__name">Рассрочка</div>
+												<div class="price__price price__punkt_weight">1 2000 руб</div>
+											</div>
+											<div class="price__punkt">
+												<div class="price__name">Наличные</div>
+												<div class="price__price price__punkt_weight">1 1000 руб</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div data-spollers class="content-product__other other">
+									<h3 class="other__title">Дополнительные опции</h3>
+									<button data-spoller class="other__button _icon-arrow-down"></button>
+									<div class="other__body">
+										<ul class="other__list">
+											<li class="other__item">Колонки р 13</li>
+											<li class="other__item">Магнитола</li>
+											<li class="other__item">Стеклоподъемники</li>
+											<li class="other__item">Центр. замок</li>
+											<li class="other__item">Электроуселитель (ЭУР)</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="main-product__images">
+								<div class="main-product__slider">
+									<div class="main-product__swiper">
+										<div class="main-product__slide-ibg">
+											<img src="@img/main/product/00.jpg" alt="">
+										</div>
+										<div class="main-product__slide-ibg">
+											<img src="@img/main/product/00.jpg" alt="">
+										</div>
+										<div class="main-product__slide-ibg">
+											<img src="@img/main/product/00.jpg" alt="">
+										</div>
+									</div>
+								</div>
+								<div class="main-product__thumbs thumbs">
+									<div class="thumbs__swiper">
+										<div class="thumbs__slide-ibg">
+											<img src="@img/main/product/01.jpg" alt="">
+										</div>
+										<div class="thumbs__slide-ibg">
+											<img src="@img/main/product/02.jpg" alt="">
+										</div>
+										<div class="thumbs__slide-ibg">
+											<img src="@img/main/product/03.jpg" alt="">
+										</div>
+										<div class="thumbs__slide-ibg">
+											<img src="@img/main/product/04.jpg" alt="">
+										</div>
+										<div class="thumbs__slide-ibg">
+											<img src="@img/main/product/05.jpg" alt="">
+										</div>
+										<div class="thumbs__slide-ibg">
+											<img src="@img/main/product/02.jpg" alt="">
+										</div>
+										<div class="thumbs__slide-ibg">
+											<img src="@img/main/product/03.jpg" alt="">
+										</div>
+										<div class="thumbs__slide-ibg">
+											<img src="@img/main/product/04.jpg" alt="">
+										</div>
+									</div>
+									<div class="thumbs__controls">
+										<button type="button" class="thumbs__prev _icon-arrow-down"></button>
+										<button type="button" class="thumbs__next _icon-arrow-down"></button>
+									</div>
+								</div>
+								<a href="#" data-da=".main-product__content, 797.98,3" class="main-product__button button">Заявка на приобритение авто</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--<div class="page__header">
+					<div class="page__container">
+						<nav class="page__breadcrumbs breadcrumbs">
+							<ul class="breadcrumbs__list">
+								<li class="breadcrumbs__item">
+									<a href="" class="breadcrumbs__link">Главная</a>
+								</li>
+								<li class="breadcrumbs__item">
+									<a href="" class="breadcrumbs__link">Разделочные ножи</a>
+								</li>
+								<li class="breadcrumbs__item">
+									<span class="breadcrumbs__current">Нож Снегирь</span>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="product">
+					<div class="product__container">
+						<div class="product__main main-product">
+							<div class="main-product__images images-product">
+								<div class="images-product__slider">
+									<div class="images-product__swiper">
+										<div class="images-product__slide-ibg">
+											<img src="@img/phoduct/01.jpg" alt="">
+										</div>
+										<div class="images-product__slide-ibg">
+											<img src="@img/phoduct/01.jpg" alt="">
+										</div>
+										<div class="images-product__slide-ibg">
+											<img src="@img/phoduct/01.jpg" alt="">
+										</div>
+										<div class="images-product__slide-ibg">
+											<img src="@img/phoduct/01.jpg" alt="">
+										</div>
+										<div class="images-product__slide-ibg">
+											<img src="@img/phoduct/01.jpg" alt="">
+										</div>
+									</div>
+								</div>
+								<div class="images-product__thumbs thumbs-images">
+									<div class="thumbs-images__swiper">
+										<div class="thumbs-images__slide-ibg">
+											<img src="@img/phoduct/01.jpg" alt="">
+										</div>
+										<div class="thumbs-images__slide-ibg">
+											<img src="@img/phoduct/01.jpg" alt="">
+										</div>
+										<div class="thumbs-images__slide-ibg">
+											<img src="@img/phoduct/01.jpg" alt="">
+										</div>
+										<div class="thumbs-images__slide-ibg">
+											<img src="@img/phoduct/01.jpg" alt="">
+										</div>
+										<div class="thumbs-images__slide-ibg">
+											<img src="@img/phoduct/01.jpg" alt="">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="main-product__body body-product">
+								<div class="body-product__header header-product">
+									<div class="header-product__line">
+										<h1 class="header-product__title">Нож Снегирь</h1>
+										<a href="" class="header-product__link _icon-compare"></a>
+										<a href="" class="header-product__link _icon-favorite"></a>
+									</div>
+									<div class="header-product__rating rating">
+										<div class="rating__body">
+											<div class="rating__active"></div>
+											<div class="rating__items">
+												<input type="radio" class="rating__item" value="1" name="rating">
+												<input type="radio" class="rating__item" value="2" name="rating">
+												<input type="radio" class="rating__item" value="3" name="rating">
+												<input type="radio" class="rating__item" value="4" name="rating">
+												<input type="radio" class="rating__item" value="5" name="rating">
+											</div>
+										</div>
+										<div class="rating__value">3.6</div>
+									</div>
+								</div>
+								<div class="body-product__table table-product">
+									<div class="table-product__label">Артикул:</div>
+									<div class="table-product__value">AF0000001952</div>
+									<div class="table-product__label">Торговая марка:</div>
+									<div class="table-product__value">WUESTHOF (Германия)</div>
+									<div class="table-product__label">Серия:</div>
+									<div class="table-product__value">Ножи серии Classic Ikon</div>
+									<div class="table-product__label">Бонусные баллы: </div>
+									<div class="table-product__value">38</div>
+								</div>
+								<div class="body-product__options options-product">
+									<div class="options-product__label">Сталь</div>
+									<div class="options-product__value">
+										<select name="form[]" class="form">
+											<option value="1" selected>Пункт №1</option>
+											<option value="2">Пункт №2</option>
+											<option value="3">Пункт №3</option>
+											<option value="4">Пункт №4</option>
+										</select>
+									</div>
+								</div>
+								<div class="body-product__actions actions-product">
+									<div class="actions-product__price">3 865</div>
+									<div class="actions-product__row">
+										<div class="actions-product__quantity quantity">
+											<button type="button" class="quantity__button quantity__button_plus"></button>
+											<div class="quantity__input">
+												<input autocomplete="off" type="text" name="form[]" value="1">
+											</div>
+											<button type="button" class="quantity__button quantity__button_minus"></button>
+										</div>
+										<div class="actions-product__buttons">
+											<a href="" class="actions-product__cart button"><span class="_icon-cart">В корзину</span></a>
+											<a href="" class="actions-product__button button button_black">Купить в 1 клик</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div data-tabs="992" class="product__info product-info">
+							<nav data-tabs-titles class="product-info__navigation">
+								<button type="submit" class="product-info__title _tab-active">Таб №1</button>
+								<button type="submit" class="product-info__title">Таб №2</button>
+								<button type="submit" class="product-info__title">Таб №3</button>
+							</nav>
+							<div data-tabs-body class="product-info__content">
+								<div class="product-info__body">
+									1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore odio exercitationem, excepturi similique nulla, voluptatem reprehenderit neque a minima eaque tenetur? Quos fugit voluptate enim quo sed, minima error molestias!
+								</div>
+								<div class="product-info__body">
+									2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore odio exercitationem, excepturi similique nulla, voluptatem reprehenderit neque a minima eaque tenetur? Quos fugit voluptate enim quo sed, minima error molestias!
+								</div>
+								<div class="product-info__body">
+									3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore odio exercitationem, excepturi similique nulla, voluptatem reprehenderit neque a minima eaque tenetur? Quos fugit voluptate enim quo sed, minima error molestias!
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>-->
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>
