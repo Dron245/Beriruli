@@ -310,7 +310,7 @@
 		display: grid;
 		grid-template-columns: 50% 50%;
 		@media (max-width:$mobile){
-			 grid-template-columns: 1fr; 
+		//	 grid-template-columns: 1fr; 
 		}
 	}
 }
@@ -327,11 +327,13 @@
 	// .main-product__images
 
 	&__images {
+		position: relative;
 	}
 
 	// .main-product__slider
 
 	&__slider {
+		@include adaptiveValue("margin-bottom", 20, 15);
 	}
 
 	// .main-product__swiper
@@ -342,12 +344,26 @@
 	// .main-product__slide-ibg
 
 	&__slide-ibg {
-		padding-bottom: 50%;
+		padding-bottom: percent(416, 602);
 	}
 
 	// .main-product__thumbs
 
 	&__thumbs {
+		@media (min-width:$mobile){
+			 display: grid;
+			 grid-template-columns: auto 545px auto;
+		//	 justify-content: space-between; 
+		}
+		//position: relative;
+		margin-bottom: rem(30);
+		//padding-left: rem(22) !important;
+		//padding-right: rem(22) !important;
+		@media (min-width:$mobile){
+			margin: 0 rem(0) rem(30) !important; 
+		}
+		//display: flex;
+		//justify-content: center;
 	}
 
 	// .main-product__button
@@ -355,6 +371,13 @@
 	&__button {
 		width: 100%;
 		text-align: center;
+		padding-left: rem(10);
+		padding-right: rem(10);
+		@media (max-width:$mobile){
+			 font-weight: 700;
+			 font-size: rem(16);
+			 line-height: math.div(26 , 16); 
+		}
 	}
 }
 .content-product {
@@ -449,22 +472,66 @@
 	// .thumbs__swiper
 
 	&__swiper {
+		//overflow: hidden;
+		//width: 100%;
+		//position: absolute;
+		//z-index: 0;
+		flex: 0 1 90.6%;
 	}
 
 	&__controls{
-
+	//	display: grid;
+	//	grid-template-columns: repeat(2, rem(20));
+		//justify-content: space-between;
+	//	position: relative;
+	//	width: 101.6%;
+		pointer-events: none;
+		
+		//background-color: gray;
+		//top: 50%;
+		//left: -0.8%;
+		color: $mainBlue;
+		transform: translateY(-50%);
+		@media (max-width:$mobile){
+			 display: none; 
+		}
 	}
-	&__prev{
+	&__arrow{
+		pointer-events: auto;
+		position: relative;
+		z-index: 7;
+	}
 
+	&__prev{
+		transform: rotate(90deg);
 	}
 	&__next{
-
+		transform: rotate(-90deg);
 	}
 	// .thumbs__slide-ibg
 
 	&__slide-ibg {
-		padding-bottom: 50%;
+		//padding-bottom: percent(73, 93)
+		padding-bottom: 14%;
+		//flex: 0 0 12%;
+		cursor: pointer;
+		//width: 93px !important;
+		img{
+			border-radius: 5px;
+		}
 	}
 }
 .button {
+}
+
+.swiper-button-disabled{
+	color: gray;
+}
+
+.swiper-slide-visible:first-child{
+	//margin-left: rem(22) !important;
+}
+
+.swiper-slide-visible:last-child{
+	//margin-right: rem(22) !important;
 }

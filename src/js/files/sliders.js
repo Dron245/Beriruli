@@ -130,15 +130,16 @@ function initSlidersTwo() {
 				// для конкретного случая
 				modules: [Thumbs, Navigation],
 				observer: true,
-				observeParents: true,
-				slidesPerView: 1,
+				//observeParents: true,
+				slidesPerView: 0,
 				spaceBetween: 0,
-				autoHeight: true,
-				speed: 800,
-	
+				autoHeight: false,
+				speed: 400,
+				//watchOverflow: true,
 				//touchRatio: 0,
 				//simulateTouch: false,
 				//loop: true,
+				//loopAdditionalSlides: 1,
 				//preloadImages: false,
 				//lazy: true,
 	
@@ -177,19 +178,19 @@ function initSlidersTwo() {
 				// Брейкпоинты
 				
 				breakpoints: {
-					/*375: {
-						slidesPerView: 1,
+					375: {
+						slidesPerView: 4,
 						spaceBetween: 0,
 						autoHeight: true,
 					},
 				
 					992: {
-						slidesPerView: 2,
-						spaceBetween: 20,
-					},*/
-					268: {
+						slidesPerView: 4,
+						spaceBetween: 0,
+					},
+					1268: {
 						slidesPerView: 5,
-						spaceBetween: 15,
+						spaceBetween: 0,
 					},
 				},
 				// События
@@ -203,11 +204,11 @@ function initSlidersTwo() {
 				modules: [Thumbs, Navigation],
 				observer: true,
 				observeParents: true,
-				slidesPerView: 1,
+				slidesPerView: 0,
 				spaceBetween: 0,
-				autoHeight: true,
-				speed: 800,
-	
+				autoHeight: false,
+				speed: 400,
+				watchOverflow:true,
 				//touchRatio: 0,
 				//simulateTouch: false,
 				//loop: true,
@@ -263,7 +264,7 @@ function initSlidersTwo() {
 					},*/
 					1268: {
 						slidesPerView: 1,
-						spaceBetween: 15,
+						spaceBetween: 0,
 					},
 				},
 				// События

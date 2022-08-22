@@ -33,9 +33,10 @@
 }
 .swiper-wrapper {
 	position: relative;
-	width: 100%;
+	width: 90.6%;
+	gap: 20px;
 	height: 100%;
-	z-index: 1;
+	//z-index: 1;
 	display: flex;
 	transition-property: transform;
 	box-sizing: content-box;
@@ -67,6 +68,7 @@
 .swiper-autoheight .swiper-wrapper {
 	align-items: flex-start;
 	transition-property: transform, height;
+	//overflow: hidden;
 }
 .swiper-3d,
 .swiper-3d.swiper-css-mode .swiper-wrapper {
