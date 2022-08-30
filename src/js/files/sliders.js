@@ -19,7 +19,7 @@ EffectFade, Lazy, Manipulation
 // Базовые стили
 import "../../scss/base/swiper.scss";
 // Полный набор стилей из scss/libs/swiper.scss
- import "../../scss/libs/swiper.scss";
+// import "../../scss/libs/swiper.scss";
 // Полный набор стилей из node_modules
 // import 'swiper/css';
 
@@ -135,7 +135,7 @@ function initSlidersTwo() {
 				spaceBetween: 0,
 				autoHeight: false,
 				speed: 400,
-				//watchOverflow: true,
+				watchOverflow: true,
 				//touchRatio: 0,
 				//simulateTouch: false,
 				//loop: true,
@@ -180,17 +180,17 @@ function initSlidersTwo() {
 				breakpoints: {
 					375: {
 						slidesPerView: 4,
-						spaceBetween: 0,
+						spaceBetween: 9.47,
 						autoHeight: true,
 					},
 				
 					992: {
-						slidesPerView: 4,
-						spaceBetween: 0,
+						slidesPerView: 5,
+						spaceBetween: 20,
 					},
 					1268: {
 						slidesPerView: 5,
-						spaceBetween: 0,
+						spaceBetween: 20,
 					},
 				},
 				// События
@@ -204,7 +204,7 @@ function initSlidersTwo() {
 				modules: [Thumbs, Navigation],
 				observer: true,
 				observeParents: true,
-				slidesPerView: 0,
+				slidesPerView: 1,
 				spaceBetween: 0,
 				autoHeight: false,
 				speed: 400,
@@ -262,10 +262,10 @@ function initSlidersTwo() {
 						slidesPerView: 2,
 						spaceBetween: 20,
 					},*/
-					1268: {
+					/*1268: {
 						slidesPerView: 1,
 						spaceBetween: 0,
-					},
+					},*/
 				},
 				// События
 				on: {

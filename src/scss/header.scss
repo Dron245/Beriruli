@@ -9,7 +9,7 @@
 		width: 100%;
 		justify-content: center;
 		align-items: center;
-		z-index:6;
+		z-index:7;
 		background: $mainColor;
 		height: rem(55);
 		@media (min-width:$tablet){
@@ -327,8 +327,8 @@
 			background-color: #ffffff;
 		}
 		.actions__menu{
-			margin-top: rem(20);
-			margin-bottom: rem(50);
+			margin-top: rem(65);
+			margin-bottom: rem(5);
 			margin-left: rem(8);
 		}
 	}
@@ -554,11 +554,12 @@
 	display: none;
 	@media (max-width: $mobile) {
 		display: block;
+		//transform: translateY(50px);
 		position: relative;
 		width: rem(30);
 		height: rem(23);
 		cursor: pointer;
-		z-index: 5;
+		z-index: 8;
 		span,
 		&::before,
 		&::after {
