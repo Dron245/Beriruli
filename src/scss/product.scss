@@ -585,6 +585,11 @@
 	// .other__button
 
 	&__button {
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
 		&::before{
 			transition: all 0.3s;
 		}		
