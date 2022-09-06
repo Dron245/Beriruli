@@ -1,0 +1,67 @@
+//====================================================================================================
+.page {
+
+	// .page__baner
+
+	&__baner {
+		
+	}
+}
+.baner {
+
+	// .baner__container
+
+	&__container {
+		@media (min-width:$tablet){
+			background: url("@img/catalog/Group 270.jpg") top no-repeat;
+			margin-top: rem(12);
+		
+			padding: rem(50) rem(50);
+		}
+	}
+
+	&__body{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin: 0px 50px;
+	}
+
+	// .baner__title
+
+	&__title {
+		font-weight: 900;
+		line-height: math.div(40 , 30);
+		@include adaptiveValue("font-size", 30, 24);
+		@media (min-width:$mobile){
+			 color: white;
+			 
+		}
+	}
+
+	// .baner__subtitle
+
+	&__subtitle {
+		//display: flex;
+		//padding: 28px 52px 28px 17px;
+		background: #0088CF;
+		backdrop-filter: blur(200px);
+		/* Note: backdrop-filter has minimal browser support */
+
+		border-radius: 3px;
+		color: white;
+		font-size: rem(16);
+		line-height: math.div(26 , 16);
+		font-weight: 700;
+		span:first-child{
+			display: inline-block;
+			background: url("@img/catalog/car.png");
+			width: 58px;
+			height: 58px;
+		}
+		@media (min-width:$mobile){
+			 
+		}
+	}
+}
+

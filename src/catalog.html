@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Каталог"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page page_inner">
+				<section class="page__header">
+					<div class="page__container">
+						<nav class="page__bread bread">
+							<ul class="bread__list">
+								<li class="bread__item">
+									<a href="#" class="bread__link">Главная</a>
+								</li>
+								<li class="bread__item">
+									<a href="#" class="bread__link">Каталог авто</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</section>
+				<section class="page__baner baner">
+					<div class="baner__container">
+						<div class="baner__body">
+							<h2 class="baner__title">Каталог автомобилей в наличии</h2>
+							<h4 class="baner__subtitle"><span></span><span></span> Дарим страховку ОСАГО на один год</h4>
+					</div>
+					</div>
+				</section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>
