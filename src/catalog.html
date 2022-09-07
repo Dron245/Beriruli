@@ -23,10 +23,40 @@
 				</section>
 				<section class="page__baner baner">
 					<div class="baner__container">
-						<div class="baner__body">
+						<div class="baner__body __container">
+							<div class="baner__back"></div>
 							<h2 class="baner__title">Каталог автомобилей в наличии</h2>
-							<h4 class="baner__subtitle"><span></span><span></span> Дарим страховку ОСАГО на один год</h4>
+							<div class="baner__content">
+								<div class="baner__img">
+									<img src="@img/catalog/car.png" alt="">
+									<img src="@img/catalog/done.png" alt="">
+								</div>
+								<h4 class="baner__subtitle"> Дарим страховку ОСАГО на один год</h4>
+							</div>
+						</div>
 					</div>
+				</section>
+				<section class="page__filter filter">
+					<div class="filter__container">
+						<h3 class="filter__title">Фильтр</h3>
+						<div class="filter__body">
+							<div class="filter__section">
+								<select name="form[]" class="form">
+									<option class="form-arrow" value="" selected>Варианты покупки</option>
+									<option value="1">Наличные</option>
+									<option value="2">Безналичный расчёт</option>
+								</select>
+								<select name="form[]" class="form">
+									<option class="form-arrow" value="" selected>Состояние автомобиля</option>
+									<option value="1">Новое</option>
+									<option value="2">С пробегом 1 водитель</option>
+									<option value="3">С пробегом 2 водителя</option>
+								</select>
+							</div>
+							<div class="filter__section"></div>
+							<button type="button" class="filter__clear">Очистить Фильтр</button>
+						
+						</div>
 					</div>
 				</section>
 			</main>

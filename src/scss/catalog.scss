@@ -12,30 +12,80 @@
 	// .baner__container
 
 	&__container {
-		@media (min-width:$tablet){
+		@media (min-width:$mobile){
 			background: url("@img/catalog/Group 270.jpg") top no-repeat;
+			background-size: cover;
 			margin-top: rem(12);
-		
-			padding: rem(50) rem(50);
+			//padding: rem(50) rem(50);
+			position: relative;
+			padding: 0px 0px;
+		}
+	}
+
+	&__back{
+		position: absolute;width: 100%;height: 100%;top: 0;left: 0;
+		background: rgba(36, 35, 33, 0.53);
+		@media (max-width:$mobile){
+			 display: none; 
 		}
 	}
 
 	&__body{
 			display: flex;
+			
 			justify-content: space-between;
 			align-items: center;
-			margin: 0px 50px;
+			position:relative;
+			@media (max-width:$mobile){
+				 flex-direction: column; 
+			}
+			//margin: 0px 50px;
 	}
 
 	// .baner__title
 
 	&__title {
+		position: relative;
+		margin-left: 30px;
 		font-weight: 900;
 		line-height: math.div(40 , 30);
 		@include adaptiveValue("font-size", 30, 24);
+		@media (max-width:$mobile){
+			 margin-left: 0;
+			 margin-top: 27px;
+			 padding: 0px 10px; 
+		}
 		@media (min-width:$mobile){
 			 color: white;
 			 
+		}
+	}
+
+	&__content{
+		//display: flex;
+		//align-items: center;
+		background: #0088CF;
+		backdrop-filter: blur(200px);
+		/* Note: backdrop-filter has minimal browser support */
+		padding: 25px 15px 38px 15px;
+		border-radius: 3px;
+		margin: 35px 56px 35px 0px;
+		@media (max-width:$mobile){
+			 width: 100%;
+			 margin-right: 0;
+			 margin-top: 20px;
+			 
+		}
+	}
+
+	&__img{
+		position:relative;
+		//@include: 0 0 80px;
+		img{
+			position: absolute;
+		}
+		img:last-child{
+			top: -20px;
 		}
 	}
 
@@ -43,21 +93,15 @@
 
 	&__subtitle {
 		//display: flex;
-		//padding: 28px 52px 28px 17px;
-		background: #0088CF;
-		backdrop-filter: blur(200px);
-		/* Note: backdrop-filter has minimal browser support */
-
-		border-radius: 3px;
+		padding: 15px 20px 0px 90px;
+		
 		color: white;
 		font-size: rem(16);
 		line-height: math.div(26 , 16);
 		font-weight: 700;
-		span:first-child{
-			display: inline-block;
-			background: url("@img/catalog/car.png");
-			width: 58px;
-			height: 58px;
+		flex: 1 0 350px;
+		@media (max-width:$mobile){
+			 text-align: left; 
 		}
 		@media (min-width:$mobile){
 			 
@@ -65,3 +109,55 @@
 	}
 }
 
+/*=============================*/
+
+.page {
+
+	// .page__filter
+
+	&__filter {
+		margin-top: rem(30);
+	}
+}
+.filter {
+
+	// .filter__container
+
+	&__container {
+		
+	}
+
+	&__body{
+		@media (min-width:$mobile){
+			 display: grid;
+			 grid-template-columns: percent(448,1203), percent(503,1203), percent(113,1203);
+			 gap: rem(25); 
+		}
+	}
+	// .filter__title
+
+	&__title {
+		font-weight: 900;
+		@include adaptiveValue("font-size", 20, 16);
+		line-height: math.div(40 , 20);
+		@media (max-width:$mobile){
+			 font-weight: 700; 
+		}
+	}
+
+	// .filter__section
+
+	&__section {
+		display: flex;
+
+	}
+
+	// .filter__clear
+
+	&__clear {
+	}
+}
+.form {
+}
+.form-arrow {
+}
