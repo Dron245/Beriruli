@@ -5,7 +5,8 @@ import { flsModules } from "./modules.js";
 
 const buttonHeader = document.querySelector('.header__event');
 const actionsHeader =document.querySelector('.event__text ')
-
+const buttonClose = document.querySelector('._close')
+const arrow = document.querySelectorAll('.menu__link-button')
 
 document.addEventListener("click", documentactions);
 
@@ -19,5 +20,11 @@ function documentactions(e) {
 		if (targetElement.classList.contains('menu__link-button')){
 			targetElement.closest('.menu__item').classList.toggle('_hover')
 		}
+	}
+	
+	if(targetElement.buttonClose){
+		arrow.forEach(element => {
+	element.classList.toggle=('hidden')
+});
 	}
 }

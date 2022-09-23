@@ -2,9 +2,11 @@
 // Снипет (HTML): sel
 .select {
 	position: relative;
+	font-size: rem(14);
 	// .select__body
 	&__body {
 		position: relative;
+		width:214px;
 	}
 	// .select__title
 	&__title {
@@ -25,9 +27,11 @@
 		gap: rem(10);
 		> * {
 			flex: 1 1 auto;
+			font-size:rem(14);
 		}
 		&:after {
-			content: "";
+			content: "\e900";
+			@extend %ic;
 			align-self: stretch;
 			flex: 0 0 10px;
 			transition: all 0.3s ease 0s;
@@ -86,7 +90,7 @@
 		width: 100%;
 		text-align: left;
 		cursor: pointer;
-		padding: 5px 15px;
+		padding: 15px 15px;
 		color: inherit;
 		&._select-selected {
 			background-color: #eee;
