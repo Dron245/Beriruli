@@ -17,6 +17,7 @@
 		cursor: pointer;
 		width: 100%;
 		border-radius: 4px;
+		padding: 12px 0px;
 	}
 	// .select__value
 	&__value {
@@ -62,13 +63,13 @@
 	&__options {
 		color: #000;
 		position: absolute;
-		top: 29px;
+		top: 100%;
 		border-radius: 0 0 4px 4px;
 		min-width: 100%;
 		left: 0;
 		background-color: #fff;
 		border-top: 0;
-		border: 1px solid #d9d9d9;
+		box-shadow: 0px 5px 15px rgba(36, 35, 33, 0.07);
 		border-top: 0;
 		padding: 10px 0px 5px 0px;
 	}
@@ -80,8 +81,12 @@
 		max-height: 200px;
 		// Стили скроллбара
 		.simplebar-scrollbar {
+			
 			&::before {
 				//opacity: 1;
+				background: #0088CF;
+				width: 2px;
+				//height: 30%;
 			}
 		}
 	}

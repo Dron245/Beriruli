@@ -5,9 +5,10 @@ import { flsModules } from "./modules.js";
 
 const buttonHeader = document.querySelector('.header__event');
 const actionsHeader =document.querySelector('.event__text ')
-const buttonClose = document.querySelector('._close')
 const arrow = document.querySelectorAll('.menu__link-button')
-
+const filter = document.querySelector('.filter__switch')
+const meh = filter.querySelectorAll('p');
+//const auto = document.querySelector('.filter__auto');
 document.addEventListener("click", documentactions);
 
 function documentactions(e) {
@@ -22,9 +23,25 @@ function documentactions(e) {
 		}
 	}
 	
-	if(targetElement.buttonClose){
+	if(targetElement.closest('._close')){
 		arrow.forEach(element => {
-	element.classList.toggle=('hidden')
+	element.classList.add('hidden')
+	element.classList.remove('openarrow')
 });
+	}
+
+	if(targetElement.closest('._open')){
+		arrow.forEach(element => {
+			element.classList.add('openarrow')
+			element.classList.remove('hidden')
+		});
+	}
+
+	if(targetElement.closest('.checkbox')){
+		
+		meh.forEach(element => {
+			element.classList.toggle('active')
+		});
+	
 	}
 }
