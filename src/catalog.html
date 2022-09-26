@@ -23,7 +23,7 @@
 				</section>
 				<section class="page__baner baner">
 					<div class="baner__container">
-						<div class="baner__body __container">
+						<div class="baner__body ">
 							<div class="baner__back"></div>
 							<h2 class="baner__title">Каталог автомобилей в наличии</h2>
 							<div class="baner__content">
@@ -38,60 +38,67 @@
 				</section>
 				<section class="page__filter filter">
 					<div class="filter__container">
-						<h3 class="filter__title">Фильтр</h3>
-						<div class="filter__body">
-							<div class="filter__section">
-								<select name="form[]" class="form">
-									<option value="">Варианты покупки</option>
-									<option value="1">Наличные</option>
-									<option value="2">Безналичный расчёт</option>
-								</select>
-								<select  name="form[]" class="form">
-									<option value="">Состояние авто</option>
-									<option value="1">Новое</option>
-									<option value="2">С пробегом 1 водитель</option>
-									<option value="3">С пробегом 2 водителя</option>
-								</select>
-								<div class="filter__year">
-									<p>Год выпуска:</p>
-									<select  data-scroll name="form[]" class="form">
-										<option value="">От</option>
-										<option value="2">2001</option>
-										<option value="3">2002</option>
-										<option value="4">2003</option>
-										<option value="5">2004</option>
-										<option value="6">2005</option>
-										<option value="7">2006</option>
-										<option value="8">2007</option>
-										<option value="9">2008</option>
-										<option value="10">2009</option>
-									</select>
-									<select data-scroll="" name="form[]" class="form">
-										<option value="">До</option>
-										<option value="1">2007</option>
-										<option value="2">2008</option>
-										<option value="3">2009</option>
-										<option value="4">2010</option>
-										<option value="5">2011</option>
-										<option value="6">2012</option>
-										<option value="7">2013</option>
-										<option value="8">2014</option>
-										<option value="9">2015</option>
-									</select>
-								</div>
-								<div class="filter__switch">
-									<p class="filter__meh active">Механика</p>
-									<label class="switch">
-										<input class="checkbox" type="checkbox">
-										<span class="slider round"></span>
-									 </label>
-									<p class="filter__auto">Автомат</p>
-								</div>
+						<div data-spollers class="spollers">
+							<div class="spollers__item">
+								<h3 data-spoller="767.98" class=" filter__title">Фильтр</h3>
+								<div class=" filter__body">
+									<div class="filter__section">
+										<select name="form[]" class="form">
+											<option value="">Варианты покупки</option>
+											<option value="1">Наличные</option>
+											<option value="2">Безналичный расчёт</option>
+										</select>
+										<select  name="form[]" class="form">
+											<option value="">Состояние авто</option>
+											<option value="1">Новое</option>
+											<option value="2">С пробегом 1 водитель</option>
+											<option value="3">С пробегом 2 водителя</option>
+										</select>
+									</div>
+									<div class="filter__section">
+										<div class="filter__year">
+											<p>Год выпуска:</p>
+											<select  data-scroll name="form[]" class="form">
+												<option value="">От</option>
+												<option value="2">2001</option>
+												<option value="3">2002</option>
+												<option value="4">2003</option>
+												<option value="5">2004</option>
+												<option value="6">2005</option>
+												<option value="7">2006</option>
+												<option value="8">2007</option>
+												<option value="9">2008</option>
+												<option value="10">2009</option>
+											</select>
+											<select data-scroll="" name="form[]" class="form">
+												<option value="">До</option>
+												<option value="1">2007</option>
+												<option value="2">2008</option>
+												<option value="3">2009</option>
+												<option value="4">2010</option>
+												<option value="5">2011</option>
+												<option value="6">2012</option>
+												<option value="7">2013</option>
+												<option value="8">2014</option>
+												<option value="9">2015</option>
+											</select>
+										</div>
+										<div data-da=".filter__body, 767.98,2" class="filter__switch">
+											<p class="filter__meh active">Механика</p>
+											<label class="switch">
+												<input class="checkbox" type="checkbox">
+												<span class="slider round"></span>
+											</label>
+											<p class="filter__auto">Автомат</p>
+										</div>
+									</div>
+									<button class="filter__button button">Очистить Фильтр</button>
+								</div>	
 							</div>
-							<div class="filter__section"></div>
-							<button type="button" class="filter__clear">Очистить Фильтр</button>
-						
 						</div>
+						
+						
+
 					</div>
 				</section>
 			</main>
