@@ -133,11 +133,13 @@
 	&__body{
 		@media (min-width:$mobile){
 			 display: grid;
+			
 			 grid-template-columns: percent(448, 1204) 1fr percent(171, 1204);
 			 gap: rem(10);
 			 @media (max-width:$pc){
 				 display: flex;
 				 flex-wrap: wrap;
+				 justify-content: center;
 			 }
 		}
 		@media (max-width:$mobile){
@@ -148,24 +150,43 @@
 	// .filter__title
 
 	&__title {
-		font-weight: 900;
-		@include adaptiveValue("font-size", 20, 16);
-		line-height: math.div(40 , 20);
-		@media (max-width:$mobile){
-			 font-weight: 700;
-			 
+		@media (min-width:$mobile){
+			font-weight: 900;
+			@include adaptiveValue("font-size", 20, 16);
+			line-height: math.div(40 , 20); 
 		}
+		
+			display: flex;
+			justify-content: space-between;
+			font-weight: 700;
+			padding: 10px 15px 10px 15px;
+			background: #F5F5F9;
+			border: 1px solid #E5E5E5;
+			border-radius: 5px;
+			&::after{
+				transition: transform 0.3s;
+				@extend %ic;
+				content: "\e900";
+				 ._spoller-active & {
+					transform: rotate(180deg);
+				}
+			
+			}
 	}
 
 	// .filter__section
 
 	&__section {
+		
 		display: flex;
 		align-items: center;
 		gap: rem(10);
-		
+		&:nth-last-child(2){
+			flex: 0 0 100%;
+			justify-content: center;
+		}
 		@media (max-width:$mobile){
-			 margin-bottom: rem(20);
+			margin-bottom: rem(20);
 			
 			display: inline-flex;
 			
@@ -185,7 +206,8 @@
 			width: 108px;
 		}
 		@media (max-width:$mobile){
-			 display: inline-flex; 
+			 flex: 0 0 100%;
+
 		}
 	}
 
@@ -194,7 +216,7 @@
 		gap: rem(10);
 		align-items: center;
 		@media (max-width:$mobile){
-			 display: inline-flex;
+			 justify-content: center;
 			 
 		}
 		p{
@@ -210,7 +232,7 @@
 		line-height: math.div(26 , 14);
 		padding: 16px 20px;
 		@media (max-width:$mobile){
-			 //margin-top: rem(20); 
+			 margin-top: rem(20); 
 		}
 	}
 }
