@@ -151,11 +151,14 @@
 
 	&__title {
 		@media (min-width:$mobile){
+			&::after{
+				display: none;
+			}
 			font-weight: 900;
 			@include adaptiveValue("font-size", 20, 16);
 			line-height: math.div(40 , 20); 
 		}
-		
+		@media (max-width:$mobile){
 			display: flex;
 			justify-content: space-between;
 			font-weight: 700;
@@ -163,15 +166,17 @@
 			background: #F5F5F9;
 			border: 1px solid #E5E5E5;
 			border-radius: 5px;
-			&::after{
-				transition: transform 0.3s;
-				@extend %ic;
-				content: "\e900";
-				 ._spoller-active & {
+			&._spoller-active{
+				&::after{
 					transform: rotate(180deg);
 				}
-			
-			}
+			} 
+		}
+		&::after{
+			transition: transform 0.3s;
+			@extend %ic;
+			content: "\e900";
+		}
 	}
 
 	// .filter__section
@@ -193,11 +198,6 @@
 		}
 	}
 
-	// .filter__clear
-
-	&__clear {
-	}
-
 	&__year{
 		display: flex;
 		gap: rem(10);
@@ -207,7 +207,6 @@
 		}
 		@media (max-width:$mobile){
 			 flex: 0 0 100%;
-
 		}
 	}
 
@@ -237,6 +236,12 @@
 	}
 }
 
+/*._spoller-active.filter__title
+	{
+		&::after{
+			color: red;
+		}
+	}*/
 
 
 
@@ -312,3 +317,31 @@
  .slider.round:before {
 	border-radius: 50%;
  }
+
+ /*=================CATALOG===========*/
+
+ .page {
+
+	// .page__catalog
+
+	&__catalog {
+		margin-top: rem(50);
+	}
+}
+.catalog {
+
+	// .catalog__container
+
+	&__container {
+		display: grid;
+		gap: rem(20);
+		grid-template-columns: repeat(3, 1fr);
+		@media (max-width:$tablet){
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (max-width:$mobile){
+			 grid-template-columns: 1fr; 
+		}
+	}
+}
+
