@@ -8,6 +8,14 @@ const actionsHeader =document.querySelector('.event__text ')
 const arrow = document.querySelectorAll('.menu__link-button')
 const filter = document.querySelector('.filter__switch')
 const meh = filter.querySelectorAll('p');
+let filterTitle = document.querySelectorAll('.select__option');
+/*const table = `
+	<div class="filter__table">
+		<div class="filter__content">
+			<div class="filter__options">${filterTitle}</div>
+			<div class="filter__close">dfgdfg</div>
+		</div>
+	</div>`*/
 //const auto = document.querySelector('.filter__auto');
 document.addEventListener("click", documentactions);
 
@@ -38,10 +46,17 @@ function documentactions(e) {
 	}
 
 	if(targetElement.closest('.checkbox')){
-		
 		meh.forEach(element => {
 			element.classList.toggle('active')
 		});
-	
-	}
+	};
+	if(targetElement.closest('.select__option')){
+		console.log(filterTitle);
+		filterTitle.forEach(element => {
+			element.classList.add('dfg')
+		});
+		
+		/*document.querySelector('.spollers').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
+	*/}
 }
+
