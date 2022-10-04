@@ -13,6 +13,15 @@ document.addEventListener("click", documentactions);
 
 function documentactions(e) {
 	const targetElement = e.target;
+	const table = `
+				<div class="filter__table">
+					<div class="filter__content">
+						<div class="filter__options">${targetElement.innerHTML}</div>
+						<div class="filter__close">dfgdfg</div>
+					</div>
+				</div>`;
+	//const filterTable = document.querySelectorAll('.filter__table')
+	
 	if (targetElement.closest('.event__close')){
 		buttonHeader.style.height = 0;
 		actionsHeader.style = "display:none";
@@ -42,15 +51,37 @@ function documentactions(e) {
 			element.classList.toggle('active')
 		});
 	};
-	if (targetElement.closest('.select__option')) {
-		const table = `
-	<div class="filter__table">
-		<div class="filter__content">
-			<div class="filter__options">${targetElement.innerHTML}</div>
-			<div class="filter__close">dfgdfg</div>
-		</div>
-	</div>`;
-	document.querySelector('.spollers').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
+	
+
+	if (targetElement.closest('.select__options')) {
+		if (targetElement.closest('[data-id="1"]')) {
+			document.querySelector('[data-id="1"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
+		}
+	}
+	if (targetElement.closest('.select__options')) {
+		if (targetElement.closest('[data-id="2"]')) {
+			document.querySelector('[data-id="2"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
+		}
+	}
+	if (targetElement.closest('.select__options')) {
+		if (targetElement.closest('[data-id="3"]')) {
+			document.querySelector('[data-id="3"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
+		}
+	}
+	if (targetElement.closest('.select__options')) {
+		if (targetElement.closest('[data-id="4"]')) {
+			document.querySelector('[data-id="4"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
+		}
+	}
+	if (targetElement.closest('.filter__close')) {
+		const filterTable = document.querySelectorAll('.filter__table');
+		//filterTable[i].remove();
+		console.log(filterTable);
+		/*for (var i = 0; i < filterTable.length; i++) {
+			filterTable[i].remove();
+			console.log(filterTable[i]);
+			
+		}*/
 	}
 }
 

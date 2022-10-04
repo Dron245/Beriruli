@@ -184,7 +184,7 @@
 	&__section {
 		
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		gap: rem(10);
 		&:nth-last-child(2){
 			flex: 0 0 100%;
@@ -201,19 +201,23 @@
 	&__year{
 		display: flex;
 		gap: rem(10);
-		align-items: center;
+		align-items: flex-start;
+		p{
+			transform:translateY(18px);
+		}
 		.select__body{
 			width: 108px;
 		}
 		@media (max-width:$mobile){
 			 flex: 0 0 100%;
+			
 		}
 	}
 
 	&__switch{
 		display: flex;
 		gap: rem(10);
-		align-items: center;
+		transform:translateY(18px);
 		@media (max-width:$mobile){
 			 justify-content: center;
 			 
@@ -226,6 +230,7 @@
 	}
 
 	&__button{
+		height: rem(56);
 		font-size:rem(14);
 		font-weight:700;
 		line-height: math.div(26 , 14);
@@ -235,18 +240,6 @@
 		}
 	}
 }
-
-/*._spoller-active.filter__title
-	{
-		&::after{
-			color: red;
-		}
-	}*/
-
-
-
-
-
 
 .active{
 	color: $mainBlue;
