@@ -73,15 +73,25 @@ function documentactions(e) {
 			document.querySelector('[data-id="4"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
 		}
 	}
+
+	const selectOne = document.querySelector('[data-id="1"]');
+	const selectTwo = document.querySelector('[data-id="2"]');
+	const selectThree = document.querySelector('[data-id="3"]');
+	const selectFour = document.querySelector('[data-id="4"]');
+
 	if (targetElement.closest('.filter__close')) {
-		const filterTable = document.querySelectorAll('.filter__table');
-		//filterTable[i].remove();
-		console.log(filterTable);
-		/*for (var i = 0; i < filterTable.length; i++) {
-			filterTable[i].remove();
-			console.log(filterTable[i]);
-			
-		}*/
+		if (targetElement.closest('[data-id="1"]')) {
+			selectOne.querySelector('.filter__table').remove()
+		}
+		if (targetElement.closest('[data-id="2"]')) {
+			selectTwo.querySelector('.filter__table').remove()
+		}
+		if (targetElement.closest('[data-id="3"]')) {
+			selectThree.querySelector('.filter__table').remove()
+		}
+		if (targetElement.closest('[data-id="4"]')) {
+			selectFour.querySelector('.filter__table').remove()
+		}
 	}
 }
 
