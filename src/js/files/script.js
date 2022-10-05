@@ -13,11 +13,13 @@ document.addEventListener("click", documentactions);
 
 function documentactions(e) {
 	const targetElement = e.target;
+	//const target = targetElement.innerHTML;
+	//console.log(target);
 	const table = `
 				<div class="filter__table">
 					<div class="filter__content">
 						<div class="filter__options">${targetElement.innerHTML}</div>
-						<div class="filter__close">dfgdfg</div>
+						<div class="filter__close">X</div>
 					</div>
 				</div>`;
 	//const filterTable = document.querySelectorAll('.filter__table')
@@ -34,9 +36,9 @@ function documentactions(e) {
 	
 	if(targetElement.closest('._close')){
 		arrow.forEach(element => {
-	element.classList.add('hidden')
-	element.classList.remove('openarrow')
-});
+		element.classList.add('hidden')
+		element.classList.remove('openarrow')
+	});
 	}
 
 	if(targetElement.closest('._open')){
@@ -52,46 +54,81 @@ function documentactions(e) {
 		});
 	};
 	
-
-	if (targetElement.closest('.select__options')) {
-		if (targetElement.closest('[data-id="1"]')) {
-			document.querySelector('[data-id="1"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
-		}
-	}
-	if (targetElement.closest('.select__options')) {
-		if (targetElement.closest('[data-id="2"]')) {
-			document.querySelector('[data-id="2"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
-		}
-	}
-	if (targetElement.closest('.select__options')) {
-		if (targetElement.closest('[data-id="3"]')) {
-			document.querySelector('[data-id="3"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
-		}
-	}
-	if (targetElement.closest('.select__options')) {
-		if (targetElement.closest('[data-id="4"]')) {
-			document.querySelector('[data-id="4"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
-		}
-	}
+	const filterOne = document.querySelector('[data-id="1"] .filter__table');
+	const filterTwo = document.querySelector('[data-id="2"] .filter__table');
+	const filterThree = document.querySelector('[data-id="3"] .filter__table');
+	const filterFour = document.querySelector('[data-id="4"] .filter__table');
 
 	const selectOne = document.querySelector('[data-id="1"]');
 	const selectTwo = document.querySelector('[data-id="2"]');
 	const selectThree = document.querySelector('[data-id="3"]');
 	const selectFour = document.querySelector('[data-id="4"]');
 
-	if (targetElement.closest('.filter__close')) {
+	//console.log(filterOne);
+	/*if (!filterOne) {
 		if (targetElement.closest('[data-id="1"]')) {
-			selectOne.querySelector('.filter__table').remove()
-		}
-		if (targetElement.closest('[data-id="2"]')) {
-			selectTwo.querySelector('.filter__table').remove()
-		}
-		if (targetElement.closest('[data-id="3"]')) {
-			selectThree.querySelector('.filter__table').remove()
-		}
-		if (targetElement.closest('[data-id="4"]')) {
-			selectFour.querySelector('.filter__table').remove()
+			document.querySelector('[data-id="1"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
 		}
 	}
-}
+	if (!filterTwo) {
+		if (targetElement.closest('[data-id="2"]')) {
+			document.querySelector('[data-id="2"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
+		}
+	}
+	if (!filterThree) {
+		if (targetElement.closest('[data-id="3"]')) {
+			document.querySelector('[data-id="3"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
+		}
+	}
+	if (!filterFour) {
+		if (targetElement.closest('[data-id="4"]')) {
+			document.querySelector('[data-id="4"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
+		}
+	}*/
+
+	if (targetElement.closest('.select__options') && !filterOne) {
+		if (targetElement.closest('[data-id="1"]')) {
+			console.log(targetElement.innerHTML);
+			document.querySelector('[data-id="1"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
+			console.log(selectOne.querySelector('.filter__options').innerHTML);
+		} else if (targetElement.closest('.select__options') && targetElement.innerHTML != selectOne.querySelector('.filter__options').innerHTML) {
+				console.log("ура!");
+			}
+
+	}
+	if (targetElement.closest('.select__options') && !filterTwo) {
+		if (targetElement.closest('[data-id="2"]')) {
+			document.querySelector('[data-id="2"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
+		}
+	}
+	if (targetElement.closest('.select__options') && !filterThree) {
+		if (targetElement.closest('[data-id="3"]')) {
+			document.querySelector('[data-id="3"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
+		}
+	}
+	if (targetElement.closest('.select__options')&& !filterFour) {
+		if (targetElement.closest('[data-id="4"]')) {
+			document.querySelector('[data-id="4"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
+		}
+	}
+
+	
+	if (targetElement.closest('.filter__close')) {
+		if (targetElement.closest('[data-id="1"]')) {
+			console.log(selectOne);
+			selectOne.querySelector('.filter__tablet').remove()
+		}
+		if (targetElement.closest('[data-id="2"]')) {
+			selectTwo.querySelector('.filter__tablet').remove()
+		}
+		if (targetElement.closest('[data-id="3"]')) {
+			selectThree.querySelector('.filter__tablet').remove()
+		}
+		if (targetElement.closest('[data-id="4"]')) {
+			selectFour.querySelector('.filter__tablet').remove()
+		}
+	}
+
+	
+}	
 
