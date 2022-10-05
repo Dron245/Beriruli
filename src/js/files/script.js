@@ -88,13 +88,11 @@ function documentactions(e) {
 
 	if (targetElement.closest('.select__options') && !filterOne) {
 		if (targetElement.closest('[data-id="1"]')) {
-			console.log(targetElement.innerHTML);
+		//	console.log(targetElement.innerHTML);
 			document.querySelector('[data-id="1"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
-			console.log(selectOne.querySelector('.filter__options').innerHTML);
-		} else if (targetElement.closest('.select__options') && targetElement.innerHTML != selectOne.querySelector('.filter__options').innerHTML) {
-				console.log("ура!");
-			}
-
+		//	console.log(selectOne.querySelector('.filter__options').innerHTML);
+		} 
+		
 	}
 	if (targetElement.closest('.select__options') && !filterTwo) {
 		if (targetElement.closest('[data-id="2"]')) {
@@ -112,10 +110,42 @@ function documentactions(e) {
 		}
 	}
 
-	
+	if (targetElement.closest('[data-id="1"]')) {
+		if (targetElement.closest('.select__options') && targetElement.innerHTML !== selectOne.querySelector('.filter__options').innerHTML) {
+		//console.log("ура!");
+		selectOne.querySelector('.filter__tablet').remove();
+		document.querySelector('[data-id="1"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`);
+		}
+	}
+
+	if (targetElement.closest('[data-id="2"]')) {
+		if (targetElement.closest('.select__options') && targetElement.innerHTML !== selectTwo.querySelector('.filter__options').innerHTML) {
+			//console.log("ура!");
+			selectTwo.querySelector('.filter__tablet').remove();
+			document.querySelector('[data-id="2"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`);
+			}
+	}
+
+	if (targetElement.closest('[data-id="3"]')) {
+		if (targetElement.closest('.select__options') && targetElement.innerHTML !== selectThree.querySelector('.filter__options').innerHTML) {
+		//console.log("ура!");
+		selectThree.querySelector('.filter__tablet').remove();
+		document.querySelector('[data-id="3"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`);
+		}
+	}
+
+	if (targetElement.closest('[data-id="4"]')) {
+		if (targetElement.closest('.select__options') && targetElement.innerHTML !== selectFour.querySelector('.filter__options').innerHTML) {
+			//console.log("ура!");
+			selectFour.querySelector('.filter__tablet').remove();
+			document.querySelector('[data-id="4"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`);
+			}
+	}
+
+
 	if (targetElement.closest('.filter__close')) {
 		if (targetElement.closest('[data-id="1"]')) {
-			console.log(selectOne);
+		//	console.log(selectOne);
 			selectOne.querySelector('.filter__tablet').remove()
 		}
 		if (targetElement.closest('[data-id="2"]')) {
