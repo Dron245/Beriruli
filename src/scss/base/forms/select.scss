@@ -6,7 +6,8 @@
 	// .select__body
 	&__body {
 		position: relative;
-		@include adaptiveValue("width", 214, 150,1213,991.98);
+		width: 100%;
+		//@include adaptiveValue("width", 214, 150,1213,991.98);
 	}
 	// .select__title
 	&__title {

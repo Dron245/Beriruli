@@ -134,8 +134,9 @@
 		@media (min-width:$mobile){
 			 display: grid;
 			
-			 grid-template-columns: percent(448, 1204) 1fr percent(171, 1204);
-			 gap: rem(10);
+			grid-template-columns: percent(448, 1204) 1fr percent(171, 1204);
+			column-gap: rem(10);
+			row-gap: rem(80);
 			 @media (max-width:$pc){
 				 display: flex;
 				 flex-wrap: wrap;
@@ -186,15 +187,14 @@
 		display: flex;
 		align-items: flex-start;
 		gap: rem(10);
-		&:nth-last-child(2){
-			flex: 0 0 100%;
-			justify-content: center;
+		&:nth-child(2){
+		//	flex: 0 0 100%;
+		//	justify-content: center;
 		}
 		@media (max-width:$mobile){
 			margin-bottom: rem(20);
-			
+			align-items: center;
 			display: inline-flex;
-			
 		}
 	}
 
@@ -210,7 +210,10 @@
 		}
 		@media (max-width:$mobile){
 			 flex: 0 0 100%;
-			
+			 align-items: center;
+			p{
+				transform: translateY(0);
+			}
 		}
 	}
 
@@ -255,6 +258,7 @@
 	display: inline-block;
 	width: 36px;
 	height: 18px;
+	top: 2px;
  }
  
  /* Hide default HTML checkbox */
@@ -279,7 +283,7 @@
 	height: 18px;
 	width: 18px;
 	top: -1px;
-	//bottom: 4px;
+	left: 0;
 	background-color: $mainBlue;
 
 	transition: .4s;
@@ -318,7 +322,7 @@
 	// .page__catalog
 
 	&__catalog {
-		margin-top: rem(50);
+		margin-top: rem(100);
 	}
 }
 .catalog {
@@ -335,6 +339,40 @@
 		@media (max-width:$mobile){
 			 grid-template-columns: 1fr; 
 		}
+	}
+}
+
+.filter {
+
+	&__tablet{
+		position: absolute;
+		width: 100%;
+		top: 140%;
+	}
+
+	&__table{
+
+	}
+
+	&__content{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 10px 20px;
+		background: #F5F5F9;
+		border-radius: 5px;
+	}
+
+	&__options{
+		font-weight: 400;
+		font-size: rem(14);
+		line-height: math.div(26 , 14);
+	}
+
+	&__close{
+		cursor: pointer;
+		font-weight: 600;
+		color: #0088CF;
 	}
 }
 

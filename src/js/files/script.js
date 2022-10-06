@@ -13,8 +13,7 @@ document.addEventListener("click", documentactions);
 
 function documentactions(e) {
 	const targetElement = e.target;
-	//const target = targetElement.innerHTML;
-	//console.log(target);
+	//console.log(targetElement);
 	const table = `
 				<div class="filter__table">
 					<div class="filter__content">
@@ -22,7 +21,6 @@ function documentactions(e) {
 						<div class="filter__close">X</div>
 					</div>
 				</div>`;
-	//const filterTable = document.querySelectorAll('.filter__table')
 	
 	if (targetElement.closest('.event__close')){
 		buttonHeader.style.height = 0;
@@ -39,14 +37,14 @@ function documentactions(e) {
 		element.classList.add('hidden')
 		element.classList.remove('openarrow')
 	});
-	}
+	};
 
 	if(targetElement.closest('._open')){
 		arrow.forEach(element => {
 			element.classList.add('openarrow')
 			element.classList.remove('hidden')
 		});
-	}
+	};
 
 	if(targetElement.closest('.checkbox')){
 		meh.forEach(element => {
@@ -64,33 +62,16 @@ function documentactions(e) {
 	const selectThree = document.querySelector('[data-id="3"]');
 	const selectFour = document.querySelector('[data-id="4"]');
 
-	//console.log(filterOne);
-	/*if (!filterOne) {
-		if (targetElement.closest('[data-id="1"]')) {
-			document.querySelector('[data-id="1"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
-		}
-	}
-	if (!filterTwo) {
-		if (targetElement.closest('[data-id="2"]')) {
-			document.querySelector('[data-id="2"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
-		}
-	}
-	if (!filterThree) {
-		if (targetElement.closest('[data-id="3"]')) {
-			document.querySelector('[data-id="3"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
-		}
-	}
-	if (!filterFour) {
-		if (targetElement.closest('[data-id="4"]')) {
-			document.querySelector('[data-id="4"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
-		}
-	}*/
+	const selectOneLabel = document.querySelector('[data-id="1"] option').innerHTML;
+	const selectTwoLabel = document.querySelector('[data-id="2"] option').innerHTML;
+	const selectThreeLabel = document.querySelector('[data-id="3"] option').innerHTML;
+	const selectFourLabel = document.querySelector('[data-id="4"] option').innerHTML;
+
+	const clearFilter = document.querySelector('.filter__button');
 
 	if (targetElement.closest('.select__options') && !filterOne) {
 		if (targetElement.closest('[data-id="1"]')) {
-		//	console.log(targetElement.innerHTML);
 			document.querySelector('[data-id="1"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
-		//	console.log(selectOne.querySelector('.filter__options').innerHTML);
 		} 
 		
 	}
@@ -112,7 +93,6 @@ function documentactions(e) {
 
 	if (targetElement.closest('[data-id="1"]')) {
 		if (targetElement.closest('.select__options') && targetElement.innerHTML !== selectOne.querySelector('.filter__options').innerHTML) {
-		//console.log("ура!");
 		selectOne.querySelector('.filter__tablet').remove();
 		document.querySelector('[data-id="1"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`);
 		}
@@ -120,7 +100,6 @@ function documentactions(e) {
 
 	if (targetElement.closest('[data-id="2"]')) {
 		if (targetElement.closest('.select__options') && targetElement.innerHTML !== selectTwo.querySelector('.filter__options').innerHTML) {
-			//console.log("ура!");
 			selectTwo.querySelector('.filter__tablet').remove();
 			document.querySelector('[data-id="2"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`);
 			}
@@ -128,7 +107,6 @@ function documentactions(e) {
 
 	if (targetElement.closest('[data-id="3"]')) {
 		if (targetElement.closest('.select__options') && targetElement.innerHTML !== selectThree.querySelector('.filter__options').innerHTML) {
-		//console.log("ура!");
 		selectThree.querySelector('.filter__tablet').remove();
 		document.querySelector('[data-id="3"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`);
 		}
@@ -136,29 +114,62 @@ function documentactions(e) {
 
 	if (targetElement.closest('[data-id="4"]')) {
 		if (targetElement.closest('.select__options') && targetElement.innerHTML !== selectFour.querySelector('.filter__options').innerHTML) {
-			//console.log("ура!");
 			selectFour.querySelector('.filter__tablet').remove();
 			document.querySelector('[data-id="4"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`);
 			}
 	}
 
+	if(targetElement.closest('.filter__button')){
+		const clearFull = document.querySelectorAll('.filter__tablet');
+		const filterLabel = document.querySelectorAll('.form');
+		for (let i = 0; i < clearFull.length; i++) {
+			clearFull[i].remove();
+		}
+		
+		for (let i = 0; i < filterLabel.length; i++) {
+			const qwe = document.querySelectorAll('.select__content')
+				//console.log(filterLabel[i].dataset.placeholder);
+				for (let i = 0; i < qwe.length; i++) {
+					console.log(qwe[i].innerHTML);
+				}
+				for (let i = 0; i < filterLabel.length; i++) {
+					console.log(filterLabel[i].dataset.placeholder);
+				}
+
+
+				qwe[i].innerHTML = filterLabel[i].dataset.placeholder;
+				
+				
+				for (let i = 0; i < qwe.length; i++) {
+					console.log(qwe[i].innerHTML);
+				}
+				for (let i = 0; i < filterLabel.length; i++) {
+					console.log(filterLabel[i].dataset.placeholder);
+				}
+			}
+		/*for (let j = 0; j < filterLabel.length; j++) {
+			filterLabel[j]="dfgdfgfg";
+			
+		}*/
+	}
 
 	if (targetElement.closest('.filter__close')) {
 		if (targetElement.closest('[data-id="1"]')) {
-		//	console.log(selectOne);
+			document.querySelector('[data-id="1"] .select__content').innerHTML = selectOneLabel;
 			selectOne.querySelector('.filter__tablet').remove()
 		}
 		if (targetElement.closest('[data-id="2"]')) {
+			document.querySelector('[data-id="2"] .select__content').innerHTML = selectTwoLabel;
 			selectTwo.querySelector('.filter__tablet').remove()
 		}
 		if (targetElement.closest('[data-id="3"]')) {
+			document.querySelector('[data-id="3"] .select__content').innerHTML = selectThreeLabel;
 			selectThree.querySelector('.filter__tablet').remove()
 		}
 		if (targetElement.closest('[data-id="4"]')) {
+			document.querySelector('[data-id="4"] .select__content').innerHTML = selectFourLabel;
 			selectFour.querySelector('.filter__tablet').remove()
 		}
 	}
-
-	
-}	
+}
 

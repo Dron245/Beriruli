@@ -43,13 +43,13 @@
 								<h3 data-spoller class=" filter__title">Фильтр</h3>
 								<div class=" filter__body">
 									<div class="filter__section">
-										<select name="form[]" class="form">
-											<option selected disabled hidden value="">Варианты покупки</option>
+										<select data-show-selected name="form[]" class="form">
+											<option value="">Варианты покупки</option>
 											<option value="1">Наличные</option>
 											<option value="2">Безналичный расчёт</option>
 										</select>
-										<select  name="form[]" class="form">
-											<option value="">Состояние авто</option>
+										<select data-show-selected name="form[]" class="form">
+											<option class="asd" selected disabled hidden value="">Состояние авто</option>
 											<option value="1">Новое</option>
 											<option value="2">С пробегом 1 водитель</option>
 											<option value="3">С пробегом 2 водителя</option>
@@ -58,8 +58,8 @@
 									<div class="filter__section">
 										<div class="filter__year">
 											<p>Год выпуска:</p>
-											<select  data-scroll name="form[]" class="form">
-												<option value="">От</option>
+											<select data-show-selected data-scroll name="form[]" class="form">
+												<option class="asd" selected disabled hidden value="">От</option>
 												<option value="2">2001</option>
 												<option value="3">2002</option>
 												<option value="4">2003</option>
@@ -70,8 +70,8 @@
 												<option value="9">2008</option>
 												<option value="10">2009</option>
 											</select>
-											<select data-scroll="" name="form[]" class="form">
-												<option value="">До</option>
+											<select data-show-selected data-scroll="" name="form[]" class="form">
+												<option class="asd" selected disabled hidden value="">До</option>
 												<option value="1">2007</option>
 												<option value="2">2008</option>
 												<option value="3">2009</option>
