@@ -69,54 +69,56 @@ function documentactions(e) {
 
 	const clearFilter = document.querySelector('.filter__button');
 
-	if (targetElement.closest('.select__options') && !filterOne) {
+	if (document.body.offsetWidth>768) {
+		if (targetElement.closest('.select__options') && !filterOne) {
+			if (targetElement.closest('[data-id="1"]')) {
+				document.querySelector('[data-id="1"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
+			} 
+			
+		}
+		if (targetElement.closest('.select__options') && !filterTwo) {
+			if (targetElement.closest('[data-id="2"]')) {
+				document.querySelector('[data-id="2"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
+			}
+		}
+		if (targetElement.closest('.select__options') && !filterThree) {
+			if (targetElement.closest('[data-id="3"]')) {
+				document.querySelector('[data-id="3"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
+			}
+		}
+		if (targetElement.closest('.select__options')&& !filterFour) {
+			if (targetElement.closest('[data-id="4"]')) {
+				document.querySelector('[data-id="4"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
+			}
+		}
+	
 		if (targetElement.closest('[data-id="1"]')) {
-			document.querySelector('[data-id="1"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
-		} 
-		
-	}
-	if (targetElement.closest('.select__options') && !filterTwo) {
+			if (targetElement.closest('.select__options') && targetElement.innerHTML !== selectOne.querySelector('.filter__options').innerHTML) {
+			selectOne.querySelector('.filter__tablet').remove();
+			document.querySelector('[data-id="1"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`);
+			}
+		}
+	
 		if (targetElement.closest('[data-id="2"]')) {
-			document.querySelector('[data-id="2"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
+			if (targetElement.closest('.select__options') && targetElement.innerHTML !== selectTwo.querySelector('.filter__options').innerHTML) {
+				selectTwo.querySelector('.filter__tablet').remove();
+				document.querySelector('[data-id="2"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`);
+				}
 		}
-	}
-	if (targetElement.closest('.select__options') && !filterThree) {
+	
 		if (targetElement.closest('[data-id="3"]')) {
-			document.querySelector('[data-id="3"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
+			if (targetElement.closest('.select__options') && targetElement.innerHTML !== selectThree.querySelector('.filter__options').innerHTML) {
+			selectThree.querySelector('.filter__tablet').remove();
+			document.querySelector('[data-id="3"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`);
+			}
 		}
-	}
-	if (targetElement.closest('.select__options')&& !filterFour) {
+	
 		if (targetElement.closest('[data-id="4"]')) {
-			document.querySelector('[data-id="4"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
+			if (targetElement.closest('.select__options') && targetElement.innerHTML !== selectFour.querySelector('.filter__options').innerHTML) {
+				selectFour.querySelector('.filter__tablet').remove();
+				document.querySelector('[data-id="4"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`);
+				}
 		}
-	}
-
-	if (targetElement.closest('[data-id="1"]')) {
-		if (targetElement.closest('.select__options') && targetElement.innerHTML !== selectOne.querySelector('.filter__options').innerHTML) {
-		selectOne.querySelector('.filter__tablet').remove();
-		document.querySelector('[data-id="1"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`);
-		}
-	}
-
-	if (targetElement.closest('[data-id="2"]')) {
-		if (targetElement.closest('.select__options') && targetElement.innerHTML !== selectTwo.querySelector('.filter__options').innerHTML) {
-			selectTwo.querySelector('.filter__tablet').remove();
-			document.querySelector('[data-id="2"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`);
-			}
-	}
-
-	if (targetElement.closest('[data-id="3"]')) {
-		if (targetElement.closest('.select__options') && targetElement.innerHTML !== selectThree.querySelector('.filter__options').innerHTML) {
-		selectThree.querySelector('.filter__tablet').remove();
-		document.querySelector('[data-id="3"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`);
-		}
-	}
-
-	if (targetElement.closest('[data-id="4"]')) {
-		if (targetElement.closest('.select__options') && targetElement.innerHTML !== selectFour.querySelector('.filter__options').innerHTML) {
-			selectFour.querySelector('.filter__tablet').remove();
-			document.querySelector('[data-id="4"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`);
-			}
 	}
 
 	if(targetElement.closest('.filter__button')){

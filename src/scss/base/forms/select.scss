@@ -3,10 +3,16 @@
 .select {
 	position: relative;
 	font-size: rem(14);
+	@media (max-width:$mobileSmall){
+		 margin-bottom: rem(20); 
+	}
 	// .select__body
 	&__body {
 		position: relative;
-		width: 100%;
+		width: 214px;
+		@media (max-width:$mobileSmall){
+			 margin: 0 auto 
+		}
 		//@include adaptiveValue("width", 214, 150,1213,991.98);
 	}
 	// .select__title
@@ -64,6 +70,7 @@
 	&__options {
 		color: #000;
 		position: absolute;
+		z-index: 2;
 		top: 100%;
 		border-radius: 0 0 4px 4px;
 		min-width: 100%;

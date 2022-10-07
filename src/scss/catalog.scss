@@ -127,20 +127,20 @@
 	// .filter__container
 
 	&__container {
-		
+		padding: 0px 0px;
 	}
 
 	&__body{
 		@media (min-width:$mobile){
-			 display: grid;
+			 display: flex;
+			justify-content: space-between;
 			
-			grid-template-columns: percent(448, 1204) 1fr percent(171, 1204);
 			column-gap: rem(10);
 			row-gap: rem(80);
 			 @media (max-width:$pc){
-				 display: flex;
+				justify-content: center;
 				 flex-wrap: wrap;
-				 justify-content: center;
+				
 			 }
 		}
 		@media (max-width:$mobile){
@@ -187,14 +187,14 @@
 		display: flex;
 		align-items: flex-start;
 		gap: rem(10);
-		&:nth-child(2){
-		//	flex: 0 0 100%;
-		//	justify-content: center;
-		}
+		
 		@media (max-width:$mobile){
 			margin-bottom: rem(20);
 			align-items: center;
 			display: inline-flex;
+		}
+		@media (max-width:$mobileSmall){
+			 display: block; 
 		}
 	}
 
@@ -204,6 +204,9 @@
 		align-items: flex-start;
 		p{
 			transform:translateY(18px);
+			@media (max-width:$mobileSmall){
+				 margin-bottom: rem(15); 
+			}
 		}
 		.select__body{
 			width: 108px;
@@ -214,6 +217,12 @@
 			p{
 				transform: translateY(0);
 			}
+		}
+		@media (max-width:$mobileSmall){
+			 display: block;
+			 .select{
+				display: inline-block;
+			 }
 		}
 	}
 
@@ -247,10 +256,7 @@
 .active{
 	color: $mainBlue;
 }
-.form {
-}
-.form-arrow {
-}
+
 
 /* The switch - the box around the slider */
 .switch {
@@ -322,7 +328,7 @@
 	// .page__catalog
 
 	&__catalog {
-		margin-top: rem(100);
+		margin-top: rem(90);
 	}
 }
 .catalog {
