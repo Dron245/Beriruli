@@ -2,7 +2,7 @@
 import { isMobile } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
-
+import {cardsData} from "./data.js"
 const buttonHeader = document.querySelector('.header__event');
 const actionsHeader =document.querySelector('.event__text ')
 const arrow = document.querySelectorAll('.menu__link-button')
@@ -179,3 +179,91 @@ function documentactions(e) {
 
 //Поиск и сортировка в каталоге
 
+const results = document.getElementById('results')
+
+
+//Генерация карточек
+function generateCard(data){
+	const cards= []
+	for (let i = 0; i < data.length; i++) {
+		cards.push(`
+			<article class="catalogbu__item item-catalogbu">
+				<div class="item-catalogbu__labels">
+					<div class="item-catalogbu__label label">VIN-номера проверены</div>
+					<div class="item-catalogbu__label label">VIN-номера проверены</div>
+				</div>
+				<a href="#" class="item-catalogbu__image -ibg">
+					<img  src="img/main/catalogbu/00${data[i].id}.jpg" alt="">
+				</a>
+				<div class="item-catalogbu__body">
+					<div class="item-catalogbu__subtitle">${data[i].condition}</div>
+					<div class="item-catalogbu__title">${data[i].title}</div>
+					<div class="item-catalogbu__year">Год выпуска <span class="item-catalogbu__numberyear">${data[i].year}</span></div>
+					<div class="item-catalogbu__detail detail">
+						<div class="detail__content">
+							<div class="detail__text">Варианты покупки</div>
+							<div class="detail__year">${data[i].options}</div>
+						</div>
+						<div class="detail__content">
+							<div class="detail__text">Коробка передач</div>
+							<div class="detail__year">${data[i].transmission}</div>
+						</div>
+						<div class="detail__content">
+							<div class="detail__text">Наличные</div>
+							<div class="detail__year">1100 руб/сутки</div>
+						</div>
+					</div>
+					<div class="item-catalogbu__button button">Полные характеристики</div>
+				</div>
+			</article>
+		`)
+	}
+	return cards
+}
+
+results.innerHTML = generateCard(cardsData).join('')
+
+//Зелёный цвет для состояния "Новое"
+
+const condition = document.querySelectorAll('.item-catalogbu__subtitle')
+//console.log(condition);
+for (let i = 0; i < condition.length; i++) {
+	const element = condition[i].innerHTML;
+	if (element==="Новое") {
+		condition[i].classList.add('_green');
+	}
+}
+
+//Функционал поиска
+
+const inputSearch = document.querySelector('.search__input')
+
+let searchValue =''
+//let filteredCardsData=''
+inputSearch.oninput =(e)=>{
+	searchValue = e.target.value;
+	}
+
+document.addEventListener('click', search)
+	
+function search(e){
+	const targetElement = e.target
+	if(targetElement.closest('.search__button')){
+		//e.preventDefault();
+		const rgx = new RegExp(searchValue, 'i');
+		//console.log(cardsData);
+		let filteredCardsData = cardsData.filter(card=>{
+			if(rgx.test(card.title)){
+				return true
+			} else {
+				return false
+			}
+			
+		})
+		//console.log(filteredCardsData);
+		results.innerHTML = generateCard(filteredCardsData).join('')
+	}
+	//console.log(results);
+
+	
+}
