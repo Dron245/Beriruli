@@ -6,6 +6,10 @@
 	&__baner {
 		
 	}
+
+	&__results{
+		margin-top: rem(90);
+	}
 }
 .baner {
 
@@ -435,7 +439,7 @@
 .results{
 
 	&__body{
-		outline: 1px solid red;
+		//outline: 1px solid red;
 		margin-top: rem(15);
 		display: grid;
 		gap: rem(20);

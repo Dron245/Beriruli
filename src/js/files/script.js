@@ -242,16 +242,17 @@ let searchValue =''
 //let filteredCardsData=''
 inputSearch.oninput =(e)=>{
 	searchValue = e.target.value;
+	console.log(searchValue);
+	filtersearch()
 	}
 
-document.addEventListener('click', search)
+document.addEventListener('click', filtersearch)
 	
-function search(e){
-	const targetElement = e.target
-	if(targetElement.closest('.search__button')){
+function filtersearch(){
+	//const targetElement = e.target
+	//if(targetElement.closest('.search__button')){
 		//e.preventDefault();
 		const rgx = new RegExp(searchValue, 'i');
-		//console.log(cardsData);
 		let filteredCardsData = cardsData.filter(card=>{
 			if(rgx.test(card.title)){
 				return true
@@ -260,10 +261,6 @@ function search(e){
 			}
 			
 		})
-		//console.log(filteredCardsData);
 		results.innerHTML = generateCard(filteredCardsData).join('')
-	}
-	//console.log(results);
-
-	
+	//}
 }
