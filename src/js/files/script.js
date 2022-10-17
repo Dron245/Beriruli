@@ -149,10 +149,6 @@ function documentactions(e) {
 					console.log(filterLabel[i].dataset.placeholder);
 				}
 			}
-		/*for (let j = 0; j < filterLabel.length; j++) {
-			filterLabel[j]="dfgdfgfg";
-			
-		}*/
 	}
 
 	if (targetElement.closest('.filter__close')) {
@@ -175,12 +171,9 @@ function documentactions(e) {
 	}
 }
 
-
-
 //Поиск и сортировка в каталоге
 
 const results = document.getElementById('results')
-
 
 //Генерация карточек
 function generateCard(data){
@@ -225,42 +218,61 @@ results.innerHTML = generateCard(cardsData).join('')
 
 //Зелёный цвет для состояния "Новое"
 
-const condition = document.querySelectorAll('.item-catalogbu__subtitle')
-//console.log(condition);
-for (let i = 0; i < condition.length; i++) {
-	const element = condition[i].innerHTML;
+const newGreen = document.querySelectorAll('.item-catalogbu__subtitle')
+
+for (let i = 0; i < newGreen.length; i++) {
+	const element = newGreen[i].innerHTML;
 	if (element==="Новое") {
-		condition[i].classList.add('_green');
+		newGreen[i].classList.add('_green');
 	}
 }
 
 //Функционал поиска
 
 const inputSearch = document.querySelector('.search__input')
+const searchButton = document.querySelector('.search__button')
 
 let searchValue =''
-//let filteredCardsData=''
 inputSearch.oninput =(e)=>{
 	searchValue = e.target.value;
-	console.log(searchValue);
-	filtersearch()
+	//filtersearch()
 	}
 
-document.addEventListener('click', filtersearch)
+searchButton.addEventListener('click', filtersearch)
 	
 function filtersearch(){
-	//const targetElement = e.target
-	//if(targetElement.closest('.search__button')){
-		//e.preventDefault();
-		const rgx = new RegExp(searchValue, 'i');
-		let filteredCardsData = cardsData.filter(card=>{
-			if(rgx.test(card.title)){
-				return true
-			} else {
-				return false
-			}
-			
-		})
-		results.innerHTML = generateCard(filteredCardsData).join('')
-	//}
+	const rgx = new RegExp(searchValue, 'i');
+	let filteredCardsData = cardsData.filter(card=>{
+		if(rgx.test(card.title)){
+			return true
+		} else {
+			return false
+		}
+	})
+	results.innerHTML = generateCard(filteredCardsData).join('')
 }
+
+
+//Фильтрация
+
+const options = document.querySelector('[data-id="1"]');
+const condition = document.querySelector('[data-id="2"]')
+console.log(options);
+
+
+
+
+		document.addEventListener('selectCallback', qwe)
+		function qwe(e) {
+			const currentSelect = e.detail.select;
+			console.log(currentSelect);
+			const asd = currentSelect.querySelector('.select__options')
+			console.log(asd);
+			asd.addEventListener('click', zxc)
+			function zxc(e){
+				console.log(e.target.innerHTML);
+			}
+	}
+	
+	
+
