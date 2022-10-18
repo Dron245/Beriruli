@@ -131,23 +131,9 @@ function documentactions(e) {
 		for (let i = 0; i < filterLabel.length; i++) {
 			const qwe = document.querySelectorAll('.select__content')
 				//console.log(filterLabel[i].dataset.placeholder);
-				for (let i = 0; i < qwe.length; i++) {
-					console.log(qwe[i].innerHTML);
-				}
-				for (let i = 0; i < filterLabel.length; i++) {
-					console.log(filterLabel[i].dataset.placeholder);
-				}
-
-
+				
 				qwe[i].innerHTML = filterLabel[i].dataset.placeholder;
-				
-				
-				for (let i = 0; i < qwe.length; i++) {
-					console.log(qwe[i].innerHTML);
-				}
-				for (let i = 0; i < filterLabel.length; i++) {
-					console.log(filterLabel[i].dataset.placeholder);
-				}
+
 			}
 	}
 
@@ -155,10 +141,12 @@ function documentactions(e) {
 		if (targetElement.closest('[data-id="1"]')) {
 			document.querySelector('[data-id="1"] .select__content').innerHTML = selectOneLabel;
 			selectOne.querySelector('.filter__tablet').remove()
-		}
+			results.innerHTML = generateCard(cardsData).join('')
+			}
 		if (targetElement.closest('[data-id="2"]')) {
 			document.querySelector('[data-id="2"] .select__content').innerHTML = selectTwoLabel;
 			selectTwo.querySelector('.filter__tablet').remove()
+			results.innerHTML = generateCard(cardsData).join('')
 		}
 		if (targetElement.closest('[data-id="3"]')) {
 			document.querySelector('[data-id="3"] .select__content').innerHTML = selectThreeLabel;
@@ -257,22 +245,41 @@ function filtersearch(){
 
 const options = document.querySelector('[data-id="1"]');
 const condition = document.querySelector('[data-id="2"]')
-console.log(options);
+const filterType = [
+	'options',
+	'condition'
+]
 
+console.log(filterType);
 
+document.addEventListener('selectCallback', filterSelect)
+function filterSelect(e) {
+	const value = e.detail.select.value;
+	console.log(value);
+	const filteredCards = cardsData.filter(card=>{
+		const reg = new RegExp(value);
+		if(reg.test(card[filterType])){
+			return true
+		} else {
+			return false
+		}
+	})
+	results.innerHTML = generateCard(filteredCards).join('')
+}
 
-
-		document.addEventListener('selectCallback', qwe)
-		function qwe(e) {
-			const currentSelect = e.detail.select;
-			console.log(currentSelect);
-			const asd = currentSelect.querySelector('.select__options')
-			console.log(asd);
-			asd.addEventListener('click', zxc)
-			function zxc(e){
-				console.log(e.target.innerHTML);
-			}
-	}
-	
-	
+filterType.forEach(type=>filterSelect(type))
+/*document.addEventListener('selectCallback', zxc)
+function zxc(e) {
+	const value = e.detail.select.value;
+	console.log(value);
+	const filteredCards = cardsData.filter(card=>{
+		const reg = new RegExp(value);
+		if(reg.test(card.condition)){
+			return true
+		} else {
+			return false
+		}
+	})
+	results.innerHTML = generateCard(filteredCards).join('')
+}*/
 
