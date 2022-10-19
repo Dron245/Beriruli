@@ -252,12 +252,15 @@ const filterType = [
 
 console.log(filterType);
 
-document.addEventListener('selectCallback', filterSelect)
-function filterSelect(e) {
+function filterSelect(filterType) {
+//document.addEventListener('selectCallback', qwe)
+options[filterType].onchange= (e)=>{
 	const value = e.detail.select.value;
-	console.log(value);
+	//console.log([filterType]);
 	const filteredCards = cardsData.filter(card=>{
 		const reg = new RegExp(value);
+		console.log([filterType]);
+		
 		if(reg.test(card[filterType])){
 			return true
 		} else {
@@ -266,6 +269,8 @@ function filterSelect(e) {
 	})
 	results.innerHTML = generateCard(filteredCards).join('')
 }
+}
+
 
 filterType.forEach(type=>filterSelect(type))
 /*document.addEventListener('selectCallback', zxc)
