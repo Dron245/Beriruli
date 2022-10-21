@@ -2,18 +2,33 @@
 import { isMobile } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
-import {cardsData} from "./data.js"
+import { cardsData } from "./data.js"
 const buttonHeader = document.querySelector('.header__event');
-const actionsHeader =document.querySelector('.event__text ')
+const actionsHeader = document.querySelector('.event__text ')
 const arrow = document.querySelectorAll('.menu__link-button')
 const filter = document.querySelector('.filter__switch')
 const meh = filter.querySelectorAll('p');
+
+const filterOne = document.querySelector('[data-id="1"] .filter__table');
+const filterTwo = document.querySelector('[data-id="2"] .filter__table');
+const filterThree = document.querySelector('[data-id="3"] .filter__table');
+const filterFour = document.querySelector('[data-id="4"] .filter__table');
+
+const selectOne = document.querySelector('[data-id="1"]');
+const selectTwo = document.querySelector('[data-id="2"]');
+const selectThree = document.querySelector('[data-id="3"]');
+const selectFour = document.querySelector('[data-id="4"]');
+
+const selectOneLabel = document.querySelector('[data-id="1"] option').innerHTML;
+const selectTwoLabel = document.querySelector('[data-id="2"] option').innerHTML;
+const selectThreeLabel = document.querySelector('[data-id="3"] option').innerHTML;
+const selectFourLabel = document.querySelector('[data-id="4"] option').innerHTML;
 
 document.addEventListener("click", documentactions);
 
 function documentactions(e) {
 	const targetElement = e.target;
-	//console.log(targetElement);
+	//макет карточки
 	const table = `
 				<div class="filter__table">
 					<div class="filter__content">
@@ -21,60 +36,46 @@ function documentactions(e) {
 						<div class="filter__close">X</div>
 					</div>
 				</div>`;
-	
-	if (targetElement.closest('.event__close')){
+
+	if (targetElement.closest('.event__close')) {
 		buttonHeader.style.height = 0;
 		actionsHeader.style = "display:none";
 	}
 	if (isMobile.any()) {
-		if (targetElement.classList.contains('menu__link-button')){
+		if (targetElement.classList.contains('menu__link-button')) {
 			targetElement.closest('.menu__item').classList.toggle('_hover')
 		}
 	}
-	
-	if(targetElement.closest('._close')){
+
+	if (targetElement.closest('._close')) {
 		arrow.forEach(element => {
-		element.classList.add('hidden')
-		element.classList.remove('openarrow')
-	});
+			element.classList.add('hidden')
+			element.classList.remove('openarrow')
+		});
 	};
 
-	if(targetElement.closest('._open')){
+	if (targetElement.closest('._open')) {
 		arrow.forEach(element => {
 			element.classList.add('openarrow')
 			element.classList.remove('hidden')
 		});
 	};
 
-	if(targetElement.closest('.checkbox')){
+	if (targetElement.closest('.checkbox')) {
 		meh.forEach(element => {
 			element.classList.toggle('active')
 		});
 	};
-	
-	const filterOne = document.querySelector('[data-id="1"] .filter__table');
-	const filterTwo = document.querySelector('[data-id="2"] .filter__table');
-	const filterThree = document.querySelector('[data-id="3"] .filter__table');
-	const filterFour = document.querySelector('[data-id="4"] .filter__table');
 
-	const selectOne = document.querySelector('[data-id="1"]');
-	const selectTwo = document.querySelector('[data-id="2"]');
-	const selectThree = document.querySelector('[data-id="3"]');
-	const selectFour = document.querySelector('[data-id="4"]');
+	//const clearFilter = document.querySelector('.filter__button');	
 
-	const selectOneLabel = document.querySelector('[data-id="1"] option').innerHTML;
-	const selectTwoLabel = document.querySelector('[data-id="2"] option').innerHTML;
-	const selectThreeLabel = document.querySelector('[data-id="3"] option').innerHTML;
-	const selectFourLabel = document.querySelector('[data-id="4"] option').innerHTML;
-
-	const clearFilter = document.querySelector('.filter__button');
-
-	if (document.body.offsetWidth>768) {
+	if (document.body.offsetWidth > 768) {
+		//Создаём карточку под селектом
 		if (targetElement.closest('.select__options') && !filterOne) {
-			if (targetElement.closest('[data-id="1"]')) {
+			//console.log(filterOne);
+			if (targetElement.closest('[data-id="1"]') && !document.querySelector('.filter__tablet')) {
 				document.querySelector('[data-id="1"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
-			} 
-			
+			}
 		}
 		if (targetElement.closest('.select__options') && !filterTwo) {
 			if (targetElement.closest('[data-id="2"]')) {
@@ -86,63 +87,64 @@ function documentactions(e) {
 				document.querySelector('[data-id="3"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
 			}
 		}
-		if (targetElement.closest('.select__options')&& !filterFour) {
+		if (targetElement.closest('.select__options') && !filterFour) {
 			if (targetElement.closest('[data-id="4"]')) {
 				document.querySelector('[data-id="4"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
 			}
 		}
-	
+
+		//Заменяем название фильтра в карточке и в плэйсхолдере селекта
 		if (targetElement.closest('[data-id="1"]')) {
 			if (targetElement.closest('.select__options') && targetElement.innerHTML !== selectOne.querySelector('.filter__options').innerHTML) {
-			selectOne.querySelector('.filter__tablet').remove();
-			document.querySelector('[data-id="1"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`);
+				selectOne.querySelector('.filter__tablet').remove();
+				selectOne.insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`);
 			}
 		}
-	
+
 		if (targetElement.closest('[data-id="2"]')) {
 			if (targetElement.closest('.select__options') && targetElement.innerHTML !== selectTwo.querySelector('.filter__options').innerHTML) {
 				selectTwo.querySelector('.filter__tablet').remove();
-				document.querySelector('[data-id="2"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`);
-				}
-		}
-	
-		if (targetElement.closest('[data-id="3"]')) {
-			if (targetElement.closest('.select__options') && targetElement.innerHTML !== selectThree.querySelector('.filter__options').innerHTML) {
-			selectThree.querySelector('.filter__tablet').remove();
-			document.querySelector('[data-id="3"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`);
+				selectTwo.insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`);
 			}
 		}
-	
+
+		if (targetElement.closest('[data-id="3"]')) {
+			if (targetElement.closest('.select__options') && targetElement.innerHTML !== selectThree.querySelector('.filter__options').innerHTML) {
+				selectThree.querySelector('.filter__tablet').remove();
+				selectThree.insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`);
+			}
+		}
+
 		if (targetElement.closest('[data-id="4"]')) {
 			if (targetElement.closest('.select__options') && targetElement.innerHTML !== selectFour.querySelector('.filter__options').innerHTML) {
 				selectFour.querySelector('.filter__tablet').remove();
-				document.querySelector('[data-id="4"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`);
-				}
+				selectFour.insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`);
+			}
 		}
 	}
 
-	if(targetElement.closest('.filter__button')){
+	//Удаляем все фильтры, если нажали "Очистить фильтр"
+	if (targetElement.closest('.filter__button')) {
 		const clearFull = document.querySelectorAll('.filter__tablet');
 		const filterLabel = document.querySelectorAll('.form');
 		for (let i = 0; i < clearFull.length; i++) {
 			clearFull[i].remove();
 		}
-		
+
 		for (let i = 0; i < filterLabel.length; i++) {
 			const qwe = document.querySelectorAll('.select__content')
-				//console.log(filterLabel[i].dataset.placeholder);
-				
-				qwe[i].innerHTML = filterLabel[i].dataset.placeholder;
-
-			}
+			qwe[i].innerHTML = filterLabel[i].dataset.placeholder;
+		}
+		results.innerHTML = generateCard(cardsData).join('')
 	}
 
+	//Удаляем карточку под селектом, если нажали крестик
 	if (targetElement.closest('.filter__close')) {
 		if (targetElement.closest('[data-id="1"]')) {
 			document.querySelector('[data-id="1"] .select__content').innerHTML = selectOneLabel;
 			selectOne.querySelector('.filter__tablet').remove()
 			results.innerHTML = generateCard(cardsData).join('')
-			}
+		}
 		if (targetElement.closest('[data-id="2"]')) {
 			document.querySelector('[data-id="2"] .select__content').innerHTML = selectTwoLabel;
 			selectTwo.querySelector('.filter__tablet').remove()
@@ -151,10 +153,12 @@ function documentactions(e) {
 		if (targetElement.closest('[data-id="3"]')) {
 			document.querySelector('[data-id="3"] .select__content').innerHTML = selectThreeLabel;
 			selectThree.querySelector('.filter__tablet').remove()
+			results.innerHTML = generateCard(cardsData).join('')
 		}
 		if (targetElement.closest('[data-id="4"]')) {
 			document.querySelector('[data-id="4"] .select__content').innerHTML = selectFourLabel;
 			selectFour.querySelector('.filter__tablet').remove()
+			results.innerHTML = generateCard(cardsData).join('')
 		}
 	}
 }
@@ -164,8 +168,8 @@ function documentactions(e) {
 const results = document.getElementById('results')
 
 //Генерация карточек
-function generateCard(data){
-	const cards= []
+function generateCard(data) {
+	const cards = []
 	for (let i = 0; i < data.length; i++) {
 		cards.push(`
 			<article class="catalogbu__item item-catalogbu">
@@ -210,7 +214,7 @@ const newGreen = document.querySelectorAll('.item-catalogbu__subtitle')
 
 for (let i = 0; i < newGreen.length; i++) {
 	const element = newGreen[i].innerHTML;
-	if (element==="Новое") {
+	if (element === "Новое") {
 		newGreen[i].classList.add('_green');
 	}
 }
@@ -220,18 +224,19 @@ for (let i = 0; i < newGreen.length; i++) {
 const inputSearch = document.querySelector('.search__input')
 const searchButton = document.querySelector('.search__button')
 
-let searchValue =''
-inputSearch.oninput =(e)=>{
+let searchValue = ''
+inputSearch.oninput = (e) => {
 	searchValue = e.target.value;
+	//живой поиск
 	//filtersearch()
-	}
+}
 
 searchButton.addEventListener('click', filtersearch)
-	
-function filtersearch(){
+
+function filtersearch() {
 	const rgx = new RegExp(searchValue, 'i');
-	let filteredCardsData = cardsData.filter(card=>{
-		if(rgx.test(card.title)){
+	let filteredCardsData = cardsData.filter(card => {
+		if (rgx.test(card.title)) {
 			return true
 		} else {
 			return false
@@ -239,52 +244,108 @@ function filtersearch(){
 	})
 	results.innerHTML = generateCard(filteredCardsData).join('')
 }
-
-
 //Фильтрация
 
-const options = document.querySelector('[data-id="1"]');
-const condition = document.querySelector('[data-id="2"]')
-const filterType = [
-	'options',
-	'condition'
-]
-
-console.log(filterType);
-
-function filterSelect(filterType) {
-//document.addEventListener('selectCallback', qwe)
-options[filterType].onchange= (e)=>{
-	const value = e.detail.select.value;
-	//console.log([filterType]);
-	const filteredCards = cardsData.filter(card=>{
-		const reg = new RegExp(value);
-		console.log([filterType]);
-		
-		if(reg.test(card[filterType])){
-			return true
-		} else {
-			return false
+//селект 1
+selectOne.addEventListener('click', qwe)
+function qwe(e) {
+	if (e.target.closest('[data-id="1"]')) {
+		document.addEventListener('selectCallback', filterOptions)
+		function filterOptions(e) {
+			const value = e.detail.select.value;
+			const filteredCards = cardsData.filter(card => {
+				const reg = new RegExp(value);
+				if (reg.test(card.options)) {
+					return true
+				} else {
+					return false
+				}
+			})
+			results.innerHTML = generateCard(filteredCards).join('')
 		}
-	})
-	results.innerHTML = generateCard(filteredCards).join('')
-}
+	}
 }
 
+//селект 2
+selectTwo.addEventListener('click', asd)
+function asd(e) {
+	if (e.target.closest('[data-id="2"]')) {
 
-filterType.forEach(type=>filterSelect(type))
-/*document.addEventListener('selectCallback', zxc)
-function zxc(e) {
-	const value = e.detail.select.value;
-	console.log(value);
-	const filteredCards = cardsData.filter(card=>{
-		const reg = new RegExp(value);
-		if(reg.test(card.condition)){
-			return true
-		} else {
-			return false
+		document.addEventListener('selectCallback', filterCondition)
+		function filterCondition(e) {
+			const value = e.detail.select.value;
+			console.log(value);
+			const filteredCards = cardsData.filter(card => {
+				const reg = new RegExp(value);
+				console.log(reg);
+				if (reg.test(card.condition)) {
+					//console.log(card.co);
+					return true
+				} else {
+					return false
+				}
+			})
+			results.innerHTML = generateCard(filteredCards).join('')
 		}
-	})
-	results.innerHTML = generateCard(filteredCards).join('')
-}*/
+	}
+}
 
+//селект 3
+selectThree.addEventListener('click', dfg)
+function dfg(e){
+	if(e.target.closest('[data-id="3"]')){
+		document.addEventListener('selectCallback', iop)
+		function iop(e){
+			const value = e.detail.select.value;
+			const vbn = cardsData.filter(card => {
+				if ((card.year) >= value ) {
+					return true
+				} else {
+					return false
+				}
+			})
+			results.innerHTML = generateCard(vbn).join('')
+		}
+	}
+}
+
+//селект 4
+selectFour.addEventListener('click', fgh)
+function fgh(e){
+	if(e.target.closest('[data-id="4"]')){
+		document.addEventListener('selectCallback', op)
+		function op(e){
+			const value = e.detail.select.value;
+			const bnm = cardsData.filter(card => {
+				if ((card.year) <= value ) {
+					return true
+				} else {
+					return false
+				}
+			})
+			results.innerHTML = generateCard(bnm).join('')
+		}
+	}
+}
+
+//Чекбокс-переключатель
+let checkActive = ''
+const label = document.querySelector('label')
+
+label.addEventListener('click', check)
+
+function check() {
+	setTimeout(function () {
+		checkActive = document.querySelector('#transmission > .active')
+		const rgx = new RegExp(checkActive.innerHTML);
+		let checks = cardsData.filter(card => {
+			if (rgx.test(card.transmission)) {
+				return true
+			} else {
+				return false
+			}
+		})
+		results.innerHTML = generateCard(checks).join('')
+	}, 10
+	)
+}
