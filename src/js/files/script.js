@@ -9,11 +9,6 @@ const arrow = document.querySelectorAll('.menu__link-button')
 const filter = document.querySelector('.filter__switch')
 const meh = filter.querySelectorAll('p');
 
-const filterOne = document.querySelector('[data-id="1"] .filter__table');
-const filterTwo = document.querySelector('[data-id="2"] .filter__table');
-const filterThree = document.querySelector('[data-id="3"] .filter__table');
-const filterFour = document.querySelector('[data-id="4"] .filter__table');
-
 const selectOne = document.querySelector('[data-id="1"]');
 const selectTwo = document.querySelector('[data-id="2"]');
 const selectThree = document.querySelector('[data-id="3"]');
@@ -37,7 +32,7 @@ function documentactions(e) {
 					</div>
 				</div>`;
 
-	if (targetElement.closest('.event__close')) {
+	{if (targetElement.closest('.event__close')) {
 		buttonHeader.style.height = 0;
 		actionsHeader.style = "display:none";
 	}
@@ -65,31 +60,30 @@ function documentactions(e) {
 		meh.forEach(element => {
 			element.classList.toggle('active')
 		});
-	};
+	};}
 
-	//const clearFilter = document.querySelector('.filter__button');	
-
+	
 	if (document.body.offsetWidth > 768) {
 		//Создаём карточку под селектом
-		if (targetElement.closest('.select__options') && !filterOne) {
+		if (targetElement.closest('.select__options')) {
 			//console.log(filterOne);
-			if (targetElement.closest('[data-id="1"]') && !document.querySelector('.filter__tablet')) {
-				document.querySelector('[data-id="1"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
+			if (targetElement.closest('[data-id="1"]') && !selectOne.querySelector('.filter__tablet')) {
+				selectOne.insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
 			}
 		}
-		if (targetElement.closest('.select__options') && !filterTwo) {
-			if (targetElement.closest('[data-id="2"]')) {
-				document.querySelector('[data-id="2"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
+		if (targetElement.closest('.select__options')) {
+			if (targetElement.closest('[data-id="2"]') && !selectTwo.querySelector('.filter__tablet')) {
+				selectTwo.insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
 			}
 		}
-		if (targetElement.closest('.select__options') && !filterThree) {
-			if (targetElement.closest('[data-id="3"]')) {
-				document.querySelector('[data-id="3"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
+		if (targetElement.closest('.select__options')) {
+			if (targetElement.closest('[data-id="3"]') && !selectThree.querySelector('.filter__tablet')) {
+				selectThree.insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
 			}
 		}
-		if (targetElement.closest('.select__options') && !filterFour) {
-			if (targetElement.closest('[data-id="4"]')) {
-				document.querySelector('[data-id="4"]').insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
+		if (targetElement.closest('.select__options')) {
+			if (targetElement.closest('[data-id="4"]') && !selectFour.querySelector('.filter__tablet')) {
+				selectFour.insertAdjacentHTML('beforeend', `<div class="filter__tablet">${table}</div>`)
 			}
 		}
 
@@ -246,25 +240,45 @@ function filtersearch() {
 }
 //Фильтрация
 
-//селект 1
-selectOne.addEventListener('click', qwe)
-function qwe(e) {
-	if (e.target.closest('[data-id="1"]')) {
-		document.addEventListener('selectCallback', filterOptions)
-		function filterOptions(e) {
-			const value = e.detail.select.value;
-			const filteredCards = cardsData.filter(card => {
-				const reg = new RegExp(value);
-				if (reg.test(card.options)) {
-					return true
-				} else {
-					return false
-				}
-			})
-			results.innerHTML = generateCard(filteredCards).join('')
-		}
-	}
+const filtersType = [
+	'options',
+	'condition',
+	'year',
+	'transmission'	
+]
+
+const filters ={
+	q : document.querySelector('[data-id="1"]'),
+	w : document.querySelector('[data-id="2"]'),
+	e : document.querySelector('[data-id="3"]'),
+	r : document.querySelector('[data-id="4"]'),
 }
+
+//селект 1
+//document.querySelector('.filter__body').addEventListener('click', filterSelect)
+//function filterSelect(filterType) {
+
+	//for (const qwee in filters){
+		//filters[qwee].onchange = () => {
+			//console.log(filters[qwee]);
+			document.addEventListener('selectCallback', filterOptions)
+			function filterOptions(e) {
+				const value = e.detail.select.value;
+				const filteredCards = cardsData.filter(card => {
+				const reg = new RegExp(value);
+					if (reg.test(card.options)) {
+						return true
+					} else {
+						return false
+					}
+				})
+				results.innerHTML = generateCard(filteredCards).join('')
+			}
+	//}
+	//}
+//}
+//filtersType.forEach(type=>filterSelect(type))
+
 
 //селект 2
 selectTwo.addEventListener('click', asd)
@@ -274,12 +288,9 @@ function asd(e) {
 		document.addEventListener('selectCallback', filterCondition)
 		function filterCondition(e) {
 			const value = e.detail.select.value;
-			console.log(value);
 			const filteredCards = cardsData.filter(card => {
 				const reg = new RegExp(value);
-				console.log(reg);
 				if (reg.test(card.condition)) {
-					//console.log(card.co);
 					return true
 				} else {
 					return false
@@ -349,3 +360,14 @@ function check() {
 	}, 10
 	)
 }
+
+
+
+
+/*function checkOtherfilter(filtersType, filteredCards){
+	let update = filteredCards
+
+	filtersType.forEach(type =>{
+		const value = ''
+	})
+}*/
