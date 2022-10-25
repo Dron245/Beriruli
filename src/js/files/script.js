@@ -371,3 +371,57 @@ function check() {
 		const value = ''
 	})
 }*/
+
+document.querySelectorAll('.selectq').forEach(select => { //Выбриаем все выпадающие списки на странице
+
+	let selectCurrent = select.querySelector('.selectq__current'),
+			selectList = select.querySelector('.selectq__list'),
+			selectInput = select.querySelector('.selectq__input'),
+			selectItem = select.querySelectorAll('.selectq__item');
+	console.log(selectCurrent);
+	//по клику добавляем/удалям класс
+	selectCurrent.addEventListener('click', qqq)
+
+	function qqq(){
+		selectList.classList.toggle('selectq__list_show')
+	}
+		
+	
+
+	//обходим элементы списка
+	selectItem.forEach(item =>{
+	
+		//обрабатываем событие клик по элементу
+		item.addEventListener('click', ()=>{
+			
+			//получаем значение из data-атрибута
+			let itemValue = item.getAttribute('data-value') 
+			
+			//получаем содержание элемента (текст)
+			let itemText = item.textContent
+			
+			//присваиваем инпуту ранее полученное значение из data-атрибута
+			selectInput.value = itemValue 
+			
+			//присваиваем текущее значение (текст)
+			selectCurrent.textContent = itemText 
+			
+			//скрываем выпадающий список
+			selectListHide() 
+		})
+	})
+	
+	// функция закрытия выпадающего списка
+	let selectListHide = () => {
+		selectList.classList.remove('selectq__list_show')
+	}
+	//Закрываем выпадающий сисок, если клик был вне области
+	document.addEventListener('mouseup', (e) =>{
+    if (!select.contains(e.target))	selectListHide()
+  })
+	selectCurrent.addEventListener('DOMSubtreeModified', qwww)
+	function qwww(e){
+		console.log('selectCurrent');
+		console.log(e.target.innerHTML);
+	}
+})
