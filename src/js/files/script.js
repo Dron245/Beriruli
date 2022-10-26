@@ -199,7 +199,7 @@ function generateCard(data) {
 			</article>
 		`)
 	}
-	console.log(cards);
+	//console.log(cards);
 	return cards
 	
 }
@@ -244,19 +244,9 @@ function filtersearch() {
 }
 //Фильтрация
 
-const filtersType = [
-	'options',
-	'condition',
-	'year',
-	'transmission'	
-]
 
-const filters ={
-	q : document.querySelector('[data-id="1"]'),
-	w : document.querySelector('[data-id="2"]'),
-	e : document.querySelector('[data-id="3"]'),
-	r : document.querySelector('[data-id="4"]'),
-}
+
+
 
 //селект 1
 //document.querySelector('.filter__body').addEventListener('click', filterSelect)
@@ -430,9 +420,49 @@ document.querySelectorAll('.selectq').forEach(select => { //Выбриаем в�
 	document.addEventListener('mouseup', (e) =>{
     if (!select.contains(e.target))	selectListHide()
   })
-	selectCurrent.addEventListener('DOMSubtreeModified', qwww)
-	function qwww(e){
-		console.log('selectCurrent');
-		console.log(e.target.innerHTML);
-	}
+
+ 
 })
+
+
+
+
+
+
+
+
+
+const filters ={
+	options : document.querySelector('#one'),
+	condition : document.querySelector('#two'),
+	//e : document.querySelector('[data-id="3"]'),
+	//r : document.querySelector('[data-id="4"]'),
+}
+console.log(filters);
+const filtertype = [
+	'options',
+	'condition',
+	//'year',
+	//'transmission'	
+	]
+
+  function filterselect(filtertype){
+	filters[filtertype].addEventListener('DOMSubtreeModified', (e)=>{
+		console.log(filters[filtertype]);
+		const value = e.target.innerHTML
+		console.log(value);
+		const filteredCards = cardsData.filter(card => {
+			const reg = new RegExp(value);
+			console.log(card[filtertype]);
+			if (reg.test(card[filtertype])) {
+				return true
+			} else {
+				return false
+			}
+		})
+		const hhh = generateCard(filteredCards)
+		//console.log(filteredCards);
+		results.innerHTML = hhh.join('')
+	})}
+	
+	filtertype.forEach(type =>filterselect(type))
