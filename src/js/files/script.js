@@ -14,6 +14,8 @@ const selectTwo = document.querySelector('[data-id="2"]');
 const selectThree = document.querySelector('[data-id="3"]');
 const selectFour = document.querySelector('[data-id="4"]');
 
+
+
 const selectOneLabel = document.querySelector('[data-id="1"] option').innerHTML;
 const selectTwoLabel = document.querySelector('[data-id="2"] option').innerHTML;
 const selectThreeLabel = document.querySelector('[data-id="3"] option').innerHTML;
@@ -197,7 +199,9 @@ function generateCard(data) {
 			</article>
 		`)
 	}
+	console.log(cards);
 	return cards
+	
 }
 
 results.innerHTML = generateCard(cardsData).join('')
@@ -257,25 +261,31 @@ const filters ={
 //селект 1
 //document.querySelector('.filter__body').addEventListener('click', filterSelect)
 //function filterSelect(filterType) {
-
+	selectOne.addEventListener('click', a)
+	function a(e) {
+		if (e.target.closest('[data-id="1"]')) {
 	//for (const qwee in filters){
 		//filters[qwee].onchange = () => {
 			//console.log(filters[qwee]);
-			document.addEventListener('selectCallback', filterOptions)
-			function filterOptions(e) {
+			document.addEventListener('selectCallback', aaa)
+			function aaa(e) {
 				const value = e.detail.select.value;
+				console.log(value);
 				const filteredCards = cardsData.filter(card => {
-				const reg = new RegExp(value);
+					const reg = new RegExp(value);
+					console.log(reg);
 					if (reg.test(card.options)) {
 						return true
 					} else {
 						return false
 					}
 				})
+				console.log(filteredCards);
 				results.innerHTML = generateCard(filteredCards).join('')
+			
 			}
-	//}
-	//}
+	}
+	}
 //}
 //filtersType.forEach(type=>filterSelect(type))
 
@@ -297,6 +307,7 @@ function asd(e) {
 				}
 			})
 			results.innerHTML = generateCard(filteredCards).join('')
+			
 		}
 	}
 }

@@ -108,203 +108,27 @@
 						</div>
 					</div>
 				</section>
-				<section>
+				<section class="test">
 					<div class="selectq">
-						<input type="hidden" name="number" class="selectq__input">
-						<button class="selectq__current">Все</button>
+						<input id="one" type="hidden" name="number" class="selectq__input">
+						<button class="selectq__current">Варианты покупки</button>
 						<div class="selectq__list">
-							<button class="selectq__item" data-value="One">One</button>
-							<button class="selectq__item" data-value="Two">Two</button>
-							<button class="selectq__item" data-value="Three">Three</button>
-							<button class="selectq__item" data-value="Four">Four</button>
-							<button class="selectq__item" data-value="One">One</button>
-							<button class="selectq__item" data-value="Two">Two</button>
-							<button class="selectq__item" data-value="Three">Three</button>
-							<button class="selectq__item" data-value="Four">Four</button>
-							<button class="selectq__item" data-value="Five">Five</button>
-						
-							<button class="selectq__item" data-value="Five">Five</button>
+							<button class="selectq__item" data-value="">Все</button>
+							<button class="selectq__item" data-value="Наличные">Наличные</button>
+							<button class="selectq__item" data-value="Безналичный расчёт">Безналичный расчёт</button>
+						</div>
+					</div>
+					<div id="two" class="selectq">
+						<input type="hidden" name="number" class="selectq__input">
+						<button class="selectq__current">Состояние авто</button>
+						<div class="selectq__list">
+							<button class="selectq__item" data-value="">Все</button>
+							<button class="selectq__item" data-value="Новое">Новое</button>
+							<button class="selectq__item" data-value="С пробегом 1 водитель">С пробегом 1 водитель</button>
+							<button class="selectq__item" data-value="С пробегом 2 водителя">С пробегом 2 водителя</button>
 						</div>
 					</div>
 				</section>
-				<!--<section class="page__catalog catalog">
-					<div class="catalog__container">
-						<article class="catalogbu__item item-catalogbu">
-							<div class="item-catalogbu__labels">
-								<div class="item-catalogbu__label label">VIN-номера проверены</div>
-								<div class="item-catalogbu__label label">VIN-номера проверены</div>
-							</div>
-							<a href="#" class="item-catalogbu__image -ibg ">
-								<img id="1" src="@img/main/catalogbu/001.jpg" alt="">
-							</a>
-							<div class="item-catalogbu__body">
-								<div class="item-catalogbu__subtitle">С пробегом 2 водителя</div>
-								<div class="item-catalogbu__title">Ваз</div>
-								<div class="item-catalogbu__year">Год выпуска <span class="item-catalogbu__numberyear">2006</span></div>
-								<div class="item-catalogbu__detail detail">
-									<div class="detail__content">
-										<div class="detail__text">Варианты покупки</div>
-										<div class="detail__year">Безналичный расчёт</div>
-									</div>
-									<div class="detail__content">
-										<div class="detail__text">Коробка передач</div>
-										<div class="detail__year">Механика</div>
-									</div>
-									<div class="detail__content">
-										<div class="detail__text">Наличные</div>
-										<div class="detail__year">1100 руб/сутки</div>
-									</div>
-								</div>
-								<div class="item-catalogbu__button button">Полные характеристики</div>
-							</div>
-						</article>
-						<article class="catalogbu__item item-catalogbu">
-							<div class="item-catalogbu__labels">
-								<div class="item-catalogbu__label label">VIN-номера проверены</div>
-								<div class="item-catalogbu__label label">VIN-номера проверены</div>
-							</div>
-							<a href="#" class="item-catalogbu__image -ibg">
-								<img id="2" src="@img/main/catalogbu/002.jpg" alt="">
-							</a>
-							<div class="item-catalogbu__body">
-								<div class="item-catalogbu__subtitle">С пробегом 1 водитель</div>
-								<div class="item-catalogbu__title">Волга</div>
-								<div class="item-catalogbu__year">Год выпуска <span class="item-catalogbu__numberyear">2010</span></div>
-								<div class="item-catalogbu__detail detail">
-									<div class="detail__content">
-										<div class="detail__text">Варианты покупки</div>
-										<div class="detail__year">Безналичный расчёт</div>
-									</div>
-									<div class="detail__content">
-										<div class="detail__text">Коробка передач</div>
-										<div class="detail__year">Механика</div>
-									</div>
-									<div class="detail__content">
-										<div class="detail__text">Наличные</div>
-										<div class="detail__year">1100 руб/сутки</div>
-									</div>
-								</div>
-								<div class="item-catalogbu__button button">Полные характеристики</div>
-							</div>
-						</article>
-						<article class="catalogbu__item item-catalogbu">
-							<div class="item-catalogbu__labels">
-								<div class="item-catalogbu__label label">VIN-номера проверены</div>
-								<div class="item-catalogbu__label label">VIN-номера проверены</div>
-							</div>
-							<a href="#" class="item-catalogbu__image -ibg">
-								<img id="3" src="@img/main/catalogbu/003.jpg" alt="">
-							</a>
-							<div class="item-catalogbu__body">
-								<div class="item-catalogbu__subtitle">Новое</div>
-								<div class="item-catalogbu__title">Москвич</div>
-								<div class="item-catalogbu__year">Год выпуска <span class="item-catalogbu__numberyear">2003</span></div>
-								<div class="item-catalogbu__detail detail">
-									<div class="detail__content">
-										<div class="detail__text">Варианты покупки</div>
-										<div class="detail__year">Наличные</div>
-									</div>
-									<div class="detail__content">
-										<div class="detail__text">Коробка передач</div>
-										<div class="detail__year">Автомат</div>
-									</div>
-									<div class="detail__content">
-										<div class="detail__text">Наличные</div>
-										<div class="detail__year">1100 руб/сутки</div>
-									</div>
-								</div>
-								<div class="item-catalogbu__button button">Полные характеристики</div>
-							</div>
-						</article>
-						<article class="catalogbu__item item-catalogbu">
-							<div class="item-catalogbu__labels">
-								<div class="item-catalogbu__label label">VIN-номера проверены</div>
-								<div class="item-catalogbu__label label">VIN-номера проверены</div>
-							</div>
-							<a href="#" class="item-catalogbu__image -ibg">
-								<img id="4" src="@img/main/catalogbu/004.jpg" alt="">
-							</a>
-							<div class="item-catalogbu__body">
-								<div class="item-catalogbu__subtitle">С пробегом 2 водителя</div>
-								<div class="item-catalogbu__title">Запорожец</div>
-								<div class="item-catalogbu__year">Год выпуска <span class="item-catalogbu__numberyear">2010</span></div>
-								<div class="item-catalogbu__detail detail">
-									<div class="detail__content">
-										<div class="detail__text">Варианты покупки</div>
-										<div class="detail__year">Наличные</div>
-									</div>
-									<div class="detail__content">
-										<div class="detail__text">Коробка передач</div>
-										<div class="detail__year">Механика</div>
-									</div>
-									<div class="detail__content">
-										<div class="detail__text">Наличные</div>
-										<div class="detail__year">1100 руб/сутки</div>
-									</div>
-								</div>
-								<div class="item-catalogbu__button button">Полные характеристики</div>
-							</div>
-						</article>
-						<article class="catalogbu__item item-catalogbu">
-							<div class="item-catalogbu__labels">
-								<div class="item-catalogbu__label label">VIN-номера проверены</div>
-								<div class="item-catalogbu__label label">VIN-номера проверены</div>
-							</div>
-							<a href="#" class="item-catalogbu__image -ibg">
-								<img id="5" src="@img/main/catalogbu/005.jpg" alt="">
-							</a>
-							<div class="item-catalogbu__body">
-								<div class="item-catalogbu__subtitle">С пробегом 1 водитель</div>
-								<div class="item-catalogbu__title">Москвич</div>
-								<div class="item-catalogbu__year">Год выпуска <span class="item-catalogbu__numberyear">2009</span></div>
-								<div class="item-catalogbu__detail detail">
-									<div class="detail__content">
-										<div class="detail__text">Варианты покупки</div>
-										<div class="detail__year">Безналичный расчёт</div>
-									</div>
-									<div class="detail__content">
-										<div class="detail__text">Коробка передач</div>
-										<div class="detail__year">Автомат</div>
-									</div>
-									<div class="detail__content">
-										<div class="detail__text">Наличные</div>
-										<div class="detail__year">1100 руб/сутки</div>
-									</div>
-								</div>
-								<div class="item-catalogbu__button button">Полные характеристики</div>
-							</div>
-						</article>
-						<article class="catalogbu__item item-catalogbu">
-							<div class="item-catalogbu__labels">
-								<div class="item-catalogbu__label label">VIN-номера проверены</div>
-								<div class="item-catalogbu__label label">VIN-номера проверены</div>
-							</div>
-							<a href="#" class="item-catalogbu__image -ibg">
-								<img id="6" src="@img/main/catalogbu/006.jpg" alt="">
-							</a>
-							<div class="item-catalogbu__body">
-								<div class="item-catalogbu__subtitle">Новое</div>
-								<div class="item-catalogbu__title">Ваз</div>
-								<div class="item-catalogbu__year">Год выпуска <span class="item-catalogbu__numberyear">2015</span></div>
-								<div class="item-catalogbu__detail detail">
-									<div class="detail__content">
-										<div class="detail__text">Варианты покупки</div>
-										<div class="detail__year">Наличные</div>
-									</div>
-									<div class="detail__content">
-										<div class="detail__text">Коробка передач</div>
-										<div class="detail__year">Автомат</div>
-									</div>
-									<div class="detail__content">
-										<div class="detail__text">Наличные</div>
-										<div class="detail__year">1100 руб/сутки</div>
-									</div>
-								</div>
-								<div class="item-catalogbu__button button">Полные характеристики</div>
-							</div>
-						</article>
-					</div>
-				</section>-->
 				<section class="page__results results">
 					<div class="results__container">
 						<!--<h3 class="results__title">Результаты поиска</h3>-->

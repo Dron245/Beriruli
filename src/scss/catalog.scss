@@ -459,9 +459,9 @@ $border-color: #ccc;
 $padding: 10px;
 
 .selectq {
-	max-width: 200px;
+	width: 300px;
 	position: relative;
-	margin: 50px auto;
+	margin: 10px 50px 90px 50px;
 	text-align-last: left;
 	// .select__input
 
@@ -496,6 +496,7 @@ $padding: 10px;
 	// .select__list
 
 	&__list {
+		position: absolute;
 		display: block;
 		width: 100%;
 		overflow: hidden;
@@ -531,4 +532,11 @@ $padding: 10px;
 			background-color: darken($light, 10)
 		}
 	}
+}
+
+
+
+.test{
+	display:flex;
+
 }
