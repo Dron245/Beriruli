@@ -446,14 +446,14 @@ const filtertype = [
 	//'transmission'	
 	]
 
-  function filterselect(filtertype){
+function filterselect(filtertype){
 	filters[filtertype].addEventListener('DOMSubtreeModified', (e)=>{
-		console.log(filters[filtertype]);
+		//console.log(filters[filtertype]);
 		const value = e.target.innerHTML
-		console.log(value);
+		//console.log(value);
 		const filteredCards = cardsData.filter(card => {
 			const reg = new RegExp(value);
-			console.log(card[filtertype]);
+			//console.log(card[filtertype]);
 			if (reg.test(card[filtertype])) {
 				return true
 			} else {
@@ -463,6 +463,6 @@ const filtertype = [
 		const hhh = generateCard(filteredCards)
 		//console.log(filteredCards);
 		results.innerHTML = hhh.join('')
-	})}
-	
-	filtertype.forEach(type =>filterselect(type))
+	})
+}
+filtertype.forEach(type =>filterselect(type))
