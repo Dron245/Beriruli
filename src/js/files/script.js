@@ -34,37 +34,39 @@ function documentactions(e) {
 					</div>
 				</div>`;
 
-	{if (targetElement.closest('.event__close')) {
-		buttonHeader.style.height = 0;
-		actionsHeader.style = "display:none";
-	}
-	if (isMobile.any()) {
-		if (targetElement.classList.contains('menu__link-button')) {
-			targetElement.closest('.menu__item').classList.toggle('_hover')
+	{
+		if (targetElement.closest('.event__close')) {
+			buttonHeader.style.height = 0;
+			actionsHeader.style = "display:none";
 		}
+		if (isMobile.any()) {
+			if (targetElement.classList.contains('menu__link-button')) {
+				targetElement.closest('.menu__item').classList.toggle('_hover')
+			}
+		}
+
+		if (targetElement.closest('._close')) {
+			arrow.forEach(element => {
+				element.classList.add('hidden')
+				element.classList.remove('openarrow')
+			});
+		};
+
+		if (targetElement.closest('._open')) {
+			arrow.forEach(element => {
+				element.classList.add('openarrow')
+				element.classList.remove('hidden')
+			});
+		};
+
+		if (targetElement.closest('.checkbox')) {
+			meh.forEach(element => {
+				element.classList.toggle('active')
+			});
+		};
 	}
 
-	if (targetElement.closest('._close')) {
-		arrow.forEach(element => {
-			element.classList.add('hidden')
-			element.classList.remove('openarrow')
-		});
-	};
 
-	if (targetElement.closest('._open')) {
-		arrow.forEach(element => {
-			element.classList.add('openarrow')
-			element.classList.remove('hidden')
-		});
-	};
-
-	if (targetElement.closest('.checkbox')) {
-		meh.forEach(element => {
-			element.classList.toggle('active')
-		});
-	};}
-
-	
 	if (document.body.offsetWidth > 768) {
 		//Создаём карточку под селектом
 		if (targetElement.closest('.select__options')) {
@@ -201,7 +203,7 @@ function generateCard(data) {
 	}
 	//console.log(cards);
 	return cards
-	
+
 }
 
 results.innerHTML = generateCard(cardsData).join('')
@@ -250,32 +252,32 @@ function filtersearch() {
 
 //селект 1
 //document.querySelector('.filter__body').addEventListener('click', filterSelect)
-//function filterSelect(filterType) {
-	selectOne.addEventListener('click', a)
-	function a(e) {
-		if (e.target.closest('[data-id="1"]')) {
-	//for (const qwee in filters){
+//function filterSelect(filterstype) {
+selectOne.addEventListener('click', a)
+function a(e) {
+	if (e.target.closest('[data-id="1"]')) {
+		//for (const qwee in filters){
 		//filters[qwee].onchange = () => {
-			//console.log(filters[qwee]);
-			document.addEventListener('selectCallback', aaa)
-			function aaa(e) {
-				const value = e.detail.select.value;
-				console.log(value);
-				const filteredCards = cardsData.filter(card => {
-					const reg = new RegExp(value);
-					console.log(reg);
-					if (reg.test(card.options)) {
-						return true
-					} else {
-						return false
-					}
-				})
-				console.log(filteredCards);
-				results.innerHTML = generateCard(filteredCards).join('')
-			
-			}
+		//console.log(filters[qwee]);
+		document.addEventListener('selectCallback', aaa)
+		function aaa(e) {
+			const value = e.detail.select.value;
+			console.log(value);
+			const filteredCards = cardsData.filter(card => {
+				const reg = new RegExp(value);
+				console.log(reg);
+				if (reg.test(card.options)) {
+					return true
+				} else {
+					return false
+				}
+			})
+			console.log(filteredCards);
+			results.innerHTML = generateCard(filteredCards).join('')
+
+		}
 	}
-	}
+}
 //}
 //filtersType.forEach(type=>filterSelect(type))
 
@@ -297,20 +299,20 @@ function asd(e) {
 				}
 			})
 			results.innerHTML = generateCard(filteredCards).join('')
-			
+
 		}
 	}
 }
 
 //селект 3
 selectThree.addEventListener('click', dfg)
-function dfg(e){
-	if(e.target.closest('[data-id="3"]')){
+function dfg(e) {
+	if (e.target.closest('[data-id="3"]')) {
 		document.addEventListener('selectCallback', iop)
-		function iop(e){
+		function iop(e) {
 			const value = e.detail.select.value;
 			const vbn = cardsData.filter(card => {
-				if ((card.year) >= value ) {
+				if ((card.year) >= value) {
 					return true
 				} else {
 					return false
@@ -323,13 +325,13 @@ function dfg(e){
 
 //селект 4
 selectFour.addEventListener('click', fgh)
-function fgh(e){
-	if(e.target.closest('[data-id="4"]')){
+function fgh(e) {
+	if (e.target.closest('[data-id="4"]')) {
 		document.addEventListener('selectCallback', op)
-		function op(e){
+		function op(e) {
 			const value = e.detail.select.value;
 			const bnm = cardsData.filter(card => {
-				if ((card.year) <= value ) {
+				if ((card.year) <= value) {
 					return true
 				} else {
 					return false
@@ -376,81 +378,73 @@ function check() {
 document.querySelectorAll('.selectq').forEach(select => { //Выбриаем все выпадающие списки на странице
 
 	let selectCurrent = select.querySelector('.selectq__current'),
-			selectList = select.querySelector('.selectq__list'),
-			selectInput = select.querySelector('.selectq__input'),
-			selectItem = select.querySelectorAll('.selectq__item');
-	console.log(selectCurrent);
+		selectList = select.querySelector('.selectq__list'),
+		selectInput = select.querySelector('.selectq__input'),
+		selectItem = select.querySelectorAll('.selectq__item');
+	//console.log(selectCurrent);
 	//по клику добавляем/удалям класс
 	selectCurrent.addEventListener('click', qqq)
 
-	function qqq(){
+	function qqq() {
 		selectList.classList.toggle('selectq__list_show')
 	}
-		
-	
+
+
 
 	//обходим элементы списка
-	selectItem.forEach(item =>{
-	
+	selectItem.forEach(item => {
+
 		//обрабатываем событие клик по элементу
-		item.addEventListener('click', ()=>{
-			
+		item.addEventListener('click', () => {
+
 			//получаем значение из data-атрибута
 			let itemValue = item.getAttribute('data-value') 
 			
 			//получаем содержание элемента (текст)
 			let itemText = item.textContent
-			
+
 			//присваиваем инпуту ранее полученное значение из data-атрибута
-			selectInput.value = itemValue 
-			
+			selectInput.value = itemValue
+
 			//присваиваем текущее значение (текст)
-			selectCurrent.textContent = itemText 
-			
+			selectCurrent.textContent = itemText
+
 			//скрываем выпадающий список
-			selectListHide() 
+			selectListHide()
 		})
 	})
-	
+
 	// функция закрытия выпадающего списка
 	let selectListHide = () => {
 		selectList.classList.remove('selectq__list_show')
 	}
 	//Закрываем выпадающий сисок, если клик был вне области
-	document.addEventListener('mouseup', (e) =>{
-    if (!select.contains(e.target))	selectListHide()
-  })
+	document.addEventListener('mouseup', (e) => {
+		if (!select.contains(e.target)) selectListHide()
+	})
 
  
 })
 
-
-
-
-
-
-
-
-
-const filters ={
-	options : document.querySelector('#one'),
-	condition : document.querySelector('#two'),
+const filters = {
+	options: document.querySelector('#one'),
+	condition: document.querySelector('#two'),
 	//e : document.querySelector('[data-id="3"]'),
 	//r : document.querySelector('[data-id="4"]'),
 }
-console.log(filters);
-const filtertype = [
+//console.log(filters);
+const filterstype = [
 	'options',
 	'condition',
 	//'year',
-	//'transmission'	
-	]
+	//'transmission'
+]
 
-function filterselect(filtertype){
-	filters[filtertype].addEventListener('DOMSubtreeModified', (e)=>{
-		//console.log(filters[filtertype]);
-		const value = e.target.innerHTML
-		//console.log(value);
+function filterselect(filtertype) {
+	filters[filtertype].addEventListener('DOMSubtreeModified', (e) => {
+		//console.log(filters[filterstype]);
+		const value = e.target.dataset.value
+		console.log(value);
 		const filteredCards = cardsData.filter(card => {
 			const reg = new RegExp(value);
 			//console.log(card[filtertype]);
@@ -460,9 +454,41 @@ function filterselect(filtertype){
 				return false
 			}
 		})
-		const hhh = generateCard(filteredCards)
+		const fullFilteredCards = checkOtherFilters(filterstype, filteredCards)
+		const filteredCardsHtml = generateCard(fullFilteredCards)
 		//console.log(filteredCards);
-		results.innerHTML = hhh.join('')
+		results.innerHTML = filteredCardsHtml.join('')
 	})
 }
-filtertype.forEach(type =>filterselect(type))
+filterstype.forEach(type => filterselect(type))
+
+function checkOtherFilters(filterstype, filteredCards) {
+	let updatedFilteredCards = filteredCards
+	filterstype.forEach(type=>{
+		const value = filters[type].querySelector('.selectq__input').value
+		console.log(value);
+		const reg = new RegExp(value);
+		const newFilteredCards = updatedFilteredCards.filter(card => {
+			//console.log(reg);
+			//console.log(card[type]);
+			if (reg.test(card[type])) {
+				return true
+			} else {
+				return false
+			}
+			
+		})
+		//console.log(updatedFilteredCards);
+		updatedFilteredCards = newFilteredCards
+	})
+	return updatedFilteredCards
+}
+
+
+
+
+
+
+
+
+
