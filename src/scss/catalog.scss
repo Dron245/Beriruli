@@ -496,7 +496,8 @@ $padding: 10px;
 	// .select__list
 
 	&__list {
-		position: absolute;
+		&:not(:first-child){
+			position: absolute;
 		display: block;
 		width: 100%;
 		overflow: hidden;
@@ -514,6 +515,8 @@ $padding: 10px;
 		background-color: #ccc;
 		border-radius: 10px;}
 		
+		
+		}
 		&_show{
 			display: block;
 		}
