@@ -425,7 +425,7 @@ document.querySelectorAll('.selectq').forEach(select => { //Выбриаем в�
 
  
 })
-
+//
 const filters = {
 	options: document.querySelector('#one'),
 	condition: document.querySelector('#two'),
