@@ -427,8 +427,8 @@ document.querySelectorAll('.selectq').forEach(select => { //Выбриаем в�
 })
 //
 const filters = {
-	options: document.querySelector('#one'),
-	condition: document.querySelector('#two'),
+	options: document.querySelector('#options'),
+	condition: document.querySelector('#condition'),
 	//e : document.querySelector('[data-id="3"]'),
 	//r : document.querySelector('[data-id="4"]'),
 }
