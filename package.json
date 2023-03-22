@@ -70,6 +70,8 @@
 		"webpack-stream": "latest"
 	},
 	"dependencies": {
+		"isotope-layout": "^3.0.6",
+		"jquery": "^3.6.4",
 		"simplebar": "latest"
 	}
 }
