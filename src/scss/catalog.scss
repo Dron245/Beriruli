@@ -433,6 +433,7 @@
 	color:rgb(87, 226, 87);
 	font-weight:700;
 	font-size:rem(20);
+	margin-bottom: 6.672px;
 }
 /*===========RESULTS=========*/
 
@@ -440,7 +441,7 @@
 
 	&__body{
 		//outline: 1px solid red;
-		margin-top: rem(15);
+		
 		display: grid;
 		gap: rem(20);
 		grid-template-columns: repeat(3, 1fr);
@@ -610,15 +611,15 @@ $padding: 10px;
 /* ---- isotope ---- */
 
 .grid {
-  background: #EEE;
-  max-width: 1200px;
+  //background: #EEE;
+  //max-width: 1200px;
 }
 
 /* clear fix */
 .grid:after {
   content: '';
-  display: block;
-  clear: both;
+  //display: block;
+  //clear: both;
 }
 
 /* ui group */

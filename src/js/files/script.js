@@ -502,8 +502,10 @@ var buttonFilter;
 var qsRegex;
 
 // init Isotope
-var $grid = $('.grid').isotope({
-  itemSelector: '.color-shape',
+var $grid = $('.results__body').isotope({
+  itemSelector: '.catalogbu__item',
+  layoutMode:'fitRows',
+  fitRows:{gutter:18},
   filter: function() {
     var $this = $(this);
     var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
