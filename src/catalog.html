@@ -40,7 +40,7 @@
 					<div class="search__container">
 						<h3 class="search__title">Поиск</h3>
 						<form action="#">
-							<input type="text" class="search__input">
+							<input type="text" placeholder="поиск" class="quicksearch search__input">
 							<button class="search__button">Найти</button>
 						</form>
 					</div>
@@ -94,7 +94,7 @@
 										</div>
 									</div>
 									<div id="transmission" class="filter__switch">
-										<p class="filter__meh active">Механика</p>
+										<p class="filter__meh _active">Механика</p>
 										<label class="switch">
 											<input class="checkbox" type="checkbox">
 											<span class="slider round"></span>
@@ -109,34 +109,34 @@
 				</section>
 				<section class="page__results results">
 					<div class="results__container">
-						<div id=results class="results__body">
+						<div id=results class="grid results__body">
 							<article class="catalogbu__item item-catalogbu">
 								<div class="item-catalogbu__labels">
 									<div class="item-catalogbu__label label">VIN-номера проверены</div>
 									<div class="item-catalogbu__label label">VIN-номера проверены</div>
 								</div>
 								<a href="#" class="item-catalogbu__image -ibg">
-									<img  src="img/main/catalogbu/00${data[i].id}.jpg" alt="">
+									<img  src="img/main/catalogbu/001.jpg" alt="">
 								</a>
 								<div class="item-catalogbu__body">
-									<div class="item-catalogbu__subtitle">${data[i].condition}</div>
-									<div class="item-catalogbu__title">${data[i].title}</div>
-									<div class="item-catalogbu__year">Год выпуска <span class="item-catalogbu__numberyear">${data[i].year}</span></div>
+									<div class="item-catalogbu__subtitle">С пробегом 2 водителя</div>
+									<div class="item-catalogbu__title">Ваз</div>
+									<div class="item-catalogbu__year">Год выпуска <span class="item-catalogbu__numberyear">2006</span></div>
 									<div class="item-catalogbu__detail detail">
 										<div class="detail__content">
 											<div class="detail__text">Варианты покупки</div>
-											<div class="detail__year">${data[i].options}</div>
+											<div class="detail__year">Безналичный расчёт</div>
 										</div>
 										<div class="detail__content">
 											<div class="detail__text">Коробка передач</div>
-											<div class="detail__year">${data[i].transmission}</div>
+											<div class="detail__year">Механика</div>
 										</div>
 										<div class="detail__content">
 											<div class="detail__text">Наличные</div>
 											<div class="detail__year">1100 руб/сутки</div>
 										</div>
 									</div>
-									<div class="item-catalogbu__button button">Полные характеристики</div>
+									<a href="#" class="item-catalogbu__button button">Полные характеристики</a>
 								</div>
 							</article>
 							<article class="catalogbu__item item-catalogbu">
@@ -145,27 +145,27 @@
 									<div class="item-catalogbu__label label">VIN-номера проверены</div>
 								</div>
 								<a href="#" class="item-catalogbu__image -ibg">
-									<img  src="img/main/catalogbu/00${data[i].id}.jpg" alt="">
+									<img  src="img/main/catalogbu/002.jpg" alt="">
 								</a>
 								<div class="item-catalogbu__body">
-									<div class="item-catalogbu__subtitle">${data[i].condition}</div>
-									<div class="item-catalogbu__title">${data[i].title}</div>
-									<div class="item-catalogbu__year">Год выпуска <span class="item-catalogbu__numberyear">${data[i].year}</span></div>
+									<div class="item-catalogbu__subtitle">С пробегом 1 водитель</div>
+									<div class="item-catalogbu__title">Волга</div>
+									<div class="item-catalogbu__year">Год выпуска <span class="item-catalogbu__numberyear">2010</span></div>
 									<div class="item-catalogbu__detail detail">
 										<div class="detail__content">
 											<div class="detail__text">Варианты покупки</div>
-											<div class="detail__year">${data[i].options}</div>
+											<div class="detail__year">Безналичный расчёт</div>
 										</div>
 										<div class="detail__content">
 											<div class="detail__text">Коробка передач</div>
-											<div class="detail__year">${data[i].transmission}</div>
+											<div class="detail__year">Механика</div>
 										</div>
 										<div class="detail__content">
 											<div class="detail__text">Наличные</div>
 											<div class="detail__year">1100 руб/сутки</div>
 										</div>
 									</div>
-									<div class="item-catalogbu__button button">Полные характеристики</div>
+									<a href="#" class="item-catalogbu__button button">Полные характеристики</a>
 								</div>
 							</article>
 							<article class="catalogbu__item item-catalogbu">
@@ -174,27 +174,27 @@
 									<div class="item-catalogbu__label label">VIN-номера проверены</div>
 								</div>
 								<a href="#" class="item-catalogbu__image -ibg">
-									<img  src="img/main/catalogbu/00${data[i].id}.jpg" alt="">
+									<img  src="img/main/catalogbu/003.jpg" alt="">
 								</a>
 								<div class="item-catalogbu__body">
-									<div class="item-catalogbu__subtitle">${data[i].condition}</div>
-									<div class="item-catalogbu__title">${data[i].title}</div>
-									<div class="item-catalogbu__year">Год выпуска <span class="item-catalogbu__numberyear">${data[i].year}</span></div>
+									<div class="item-catalogbu__subtitle">Новое</div>
+									<div class="item-catalogbu__title">Москвич</div>
+									<div class="item-catalogbu__year">Год выпуска <span class="item-catalogbu__numberyear">2003</span></div>
 									<div class="item-catalogbu__detail detail">
 										<div class="detail__content">
 											<div class="detail__text">Варианты покупки</div>
-											<div class="detail__year">${data[i].options}</div>
+											<div class="detail__year">Наличные</div>
 										</div>
 										<div class="detail__content">
 											<div class="detail__text">Коробка передач</div>
-											<div class="detail__year">${data[i].transmission}</div>
+											<div class="detail__year">Автомат</div>
 										</div>
 										<div class="detail__content">
 											<div class="detail__text">Наличные</div>
 											<div class="detail__year">1100 руб/сутки</div>
 										</div>
 									</div>
-									<div class="item-catalogbu__button button">Полные характеристики</div>
+									<a href="#" class="item-catalogbu__button button">Полные характеристики</a>
 								</div>
 							</article>
 							<article class="catalogbu__item item-catalogbu">
@@ -203,27 +203,27 @@
 									<div class="item-catalogbu__label label">VIN-номера проверены</div>
 								</div>
 								<a href="#" class="item-catalogbu__image -ibg">
-									<img  src="img/main/catalogbu/00${data[i].id}.jpg" alt="">
+									<img  src="img/main/catalogbu/004.jpg" alt="">
 								</a>
 								<div class="item-catalogbu__body">
-									<div class="item-catalogbu__subtitle">${data[i].condition}</div>
-									<div class="item-catalogbu__title">${data[i].title}</div>
-									<div class="item-catalogbu__year">Год выпуска <span class="item-catalogbu__numberyear">${data[i].year}</span></div>
+									<div class="item-catalogbu__subtitle">С пробегом 2 водителя</div>
+									<div class="item-catalogbu__title">Запорожец</div>
+									<div class="item-catalogbu__year">Год выпуска <span class="item-catalogbu__numberyear">2010</span></div>
 									<div class="item-catalogbu__detail detail">
 										<div class="detail__content">
 											<div class="detail__text">Варианты покупки</div>
-											<div class="detail__year">${data[i].options}</div>
+											<div class="detail__year">Наличные</div>
 										</div>
 										<div class="detail__content">
 											<div class="detail__text">Коробка передач</div>
-											<div class="detail__year">${data[i].transmission}</div>
+											<div class="detail__year">Механика</div>
 										</div>
 										<div class="detail__content">
 											<div class="detail__text">Наличные</div>
 											<div class="detail__year">1100 руб/сутки</div>
 										</div>
 									</div>
-									<div class="item-catalogbu__button button">Полные характеристики</div>
+									<a href="#" class="item-catalogbu__button button">Полные характеристики</a>
 								</div>
 							</article>
 							<article class="catalogbu__item item-catalogbu">
@@ -232,27 +232,27 @@
 									<div class="item-catalogbu__label label">VIN-номера проверены</div>
 								</div>
 								<a href="#" class="item-catalogbu__image -ibg">
-									<img  src="img/main/catalogbu/00${data[i].id}.jpg" alt="">
+									<img  src="img/main/catalogbu/005.jpg" alt="">
 								</a>
 								<div class="item-catalogbu__body">
-									<div class="item-catalogbu__subtitle">${data[i].condition}</div>
-									<div class="item-catalogbu__title">${data[i].title}</div>
-									<div class="item-catalogbu__year">Год выпуска <span class="item-catalogbu__numberyear">${data[i].year}</span></div>
+									<div class="item-catalogbu__subtitle">С пробегом 1 водитель</div>
+									<div class="item-catalogbu__title">Москвич</div>
+									<div class="item-catalogbu__year">Год выпуска <span class="item-catalogbu__numberyear">2009</span></div>
 									<div class="item-catalogbu__detail detail">
 										<div class="detail__content">
 											<div class="detail__text">Варианты покупки</div>
-											<div class="detail__year">${data[i].options}</div>
+											<div class="detail__year">Безналичный расчёт</div>
 										</div>
 										<div class="detail__content">
 											<div class="detail__text">Коробка передач</div>
-											<div class="detail__year">${data[i].transmission}</div>
+											<div class="detail__year">Автомат</div>
 										</div>
 										<div class="detail__content">
 											<div class="detail__text">Наличные</div>
 											<div class="detail__year">1100 руб/сутки</div>
 										</div>
 									</div>
-									<div class="item-catalogbu__button button">Полные характеристики</div>
+									<a href="#" class="item-catalogbu__button button">Полные характеристики</a>
 								</div>
 							</article>
 							<article class="catalogbu__item item-catalogbu">
@@ -261,37 +261,37 @@
 									<div class="item-catalogbu__label label">VIN-номера проверены</div>
 								</div>
 								<a href="#" class="item-catalogbu__image -ibg">
-									<img  src="img/main/catalogbu/00${data[i].id}.jpg" alt="">
+									<img  src="img/main/catalogbu/006.jpg" alt="">
 								</a>
 								<div class="item-catalogbu__body">
-									<div class="item-catalogbu__subtitle">${data[i].condition}</div>
-									<div class="item-catalogbu__title">${data[i].title}</div>
-									<div class="item-catalogbu__year">Год выпуска <span class="item-catalogbu__numberyear">${data[i].year}</span></div>
+									<div class="item-catalogbu__subtitle">Новое</div>
+									<div class="item-catalogbu__title">Ваз</div>
+									<div class="item-catalogbu__year">Год выпуска <span class="item-catalogbu__numberyear">2015</span></div>
 									<div class="item-catalogbu__detail detail">
 										<div class="detail__content">
 											<div class="detail__text">Варианты покупки</div>
-											<div class="detail__year">${data[i].options}</div>
+											<div class="detail__year">Наличные</div>
 										</div>
 										<div class="detail__content">
 											<div class="detail__text">Коробка передач</div>
-											<div class="detail__year">${data[i].transmission}</div>
+											<div class="detail__year">Автомат</div>
 										</div>
 										<div class="detail__content">
 											<div class="detail__text">Наличные</div>
 											<div class="detail__year">1100 руб/сутки</div>
 										</div>
 									</div>
-									<div class="item-catalogbu__button button">Полные характеристики</div>
+									<a href="#" class="item-catalogbu__button button">Полные характеристики</a>
 								</div>
 							</article>
 						</div>
 					</div>
 				</section>
 
-				<h1>Isotope - combination filters &amp; search</h1>
+				<!-- <h1>Isotope - combination filters &amp; search</h1> -->
 
 
-<p><input type="text" class="quicksearch" placeholder="Search" /></p>
+<!-- <p><input type="text" class="quicksearch" placeholder="Search" /></p>
 
 <div class="filters">
 
@@ -352,7 +352,7 @@
   <div class="color-shape tall square red">Titanium</div>
   <div class="color-shape tall square blue">Vanadium</div>
   <div class="color-shape tall square yellow">Chromium</div>
-</div>
+</div> -->
 
 
 			</main>

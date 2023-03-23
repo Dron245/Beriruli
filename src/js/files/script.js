@@ -62,7 +62,7 @@ if(document.querySelector('.catalogjs')){
 
 			if (targetElement.closest('.checkbox')) {
 				meh.forEach(element => {
-					element.classList.toggle('active')
+					element.classList.toggle('_active')
 				});
 			};
 		}
@@ -207,7 +207,7 @@ if(document.querySelector('.catalogjs')){
 
 	}
 
-	results.innerHTML = generateCard(cardsData).join('')
+	//results.innerHTML = generateCard(cardsData).join('')
 
 	//Зелёный цвет для состояния "Новое"
 
