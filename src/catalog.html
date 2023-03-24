@@ -51,45 +51,47 @@
 							<div class="spollers__item">
 								<h3 data-spoller class=" filter__title">Фильтр</h3>
 								<div class=" filter__body">
-									<div class="filter__section">
-										<select id="options" data-show-selected name="form[]" class="form">
-											<option selected disabled hidden value="">Варианты покупки</option>
-											<option value="Наличные">Наличные</option>
-											<option value="Безналичный расчёт">Безналичный расчёт</option>
+									<div class="filters filter__section">
+										<select id="options" data-show-selected name="form[]" value-group="purchase-method" class="form">
+											<option disabled selected value="Варианты покупки">Варианты покупки</option>
+											<option value="">Все</option>
+											<option value=".nal">Наличные</option>
+											<option value=".not-nal">Безналичный расчёт</option>
 										</select>
-										<select id="condition" data-show-selected name="form[]" class="form">
-											<option selected disabled hidden value="">Состояние авто</option>
-											<option value="Новое" >Новое</option>
-											<option value="С пробегом 1 водитель" >С пробегом 1 водитель</option>
-											<option value="С пробегом 2 водителя" >С пробегом 2 водителя</option>
+										<select id="condition" data-show-selected name="form[]" value-group="helth" class="form">
+											<option selected disabled value="Состояние авто">Состояние авто</option>
+											<option value="">Любое</option>
+											<option value=".nov">Новое</option>
+											<option value=".prob1">С пробегом 1 водитель</option>
+											<option value=".prob2">С пробегом 2 водителя</option>
 										</select>
 									</div>
 									<div class="filter__section">
 										<div class="filter__year">
 											<p>Год выпуска:</p>
-											<select data-show-selected data-scroll name="form[]" class="form">
-												<option class="asd" selected disabled hidden value="">От</option>
-												<option>2001</option>
-												<option>2002</option>
-												<option>2003</option>
-												<option>2004</option>
-												<option>2005</option>
-												<option>2006</option>
-												<option>2007</option>
-												<option>2008</option>
-												<option>2009</option>
+											<select data-show-selected data-scroll name="form[]" value-group="ot" class="form">
+												<option class="asd" selected disabled value="От">От</option>
+												<option value=".2001">2001</option>
+												<option value=".2002">2002</option>
+												<option value=".2003">2003</option>
+												<option value=".2004">2004</option>
+												<option value=".2005">2005</option>
+												<option value=".2006">2006</option>
+												<option value=".2007">2007</option>
+												<option value=".2008">2008</option>
+												<option value=".2009">2009</option>
 											</select>
-											<select data-show-selected data-scroll="" name="form[]" class="form">
-												<option class="asd" selected disabled hidden value="">До</option>
-												<option>2007</option>
-												<option>2008</option>
-												<option>2009</option>
-												<option>2010</option>
-												<option>2011</option>
-												<option>2012</option>
-												<option>2013</option>
-												<option>2014</option>
-												<option>2015</option>
+											<select data-show-selected data-scroll="" name="form[]" value-group="do" class="form">
+												<option class="asd" selected disabled value="До">До</option>
+												<option value=".2007">2007</option>
+												<option value=".2008">2008</option>
+												<option value=".2009">2009</option>
+												<option value=".2010">2010</option>
+												<option value=".2011">2011</option>
+												<option value=".2012">2012</option>
+												<option value=".2013">2013</option>
+												<option value=".2014">2014</option>
+												<option value=".2015">2015</option>
 											</select>
 										</div>
 									</div>
@@ -110,7 +112,7 @@
 				<section class="page__results results">
 					<div class="results__container">
 						<div id=results class="grid results__body">
-							<article class="catalogbu__item item-catalogbu">
+							<article class="catalogbu__item item-catalogbu not-nal prob2 2006">
 								<div class="item-catalogbu__labels">
 									<div class="item-catalogbu__label label">VIN-номера проверены</div>
 									<div class="item-catalogbu__label label">VIN-номера проверены</div>
@@ -139,7 +141,7 @@
 									<a href="#" class="item-catalogbu__button button">Полные характеристики</a>
 								</div>
 							</article>
-							<article class="catalogbu__item item-catalogbu">
+							<article class="catalogbu__item item-catalogbu not-nal prob1 2010">
 								<div class="item-catalogbu__labels">
 									<div class="item-catalogbu__label label">VIN-номера проверены</div>
 									<div class="item-catalogbu__label label">VIN-номера проверены</div>
@@ -168,7 +170,7 @@
 									<a href="#" class="item-catalogbu__button button">Полные характеристики</a>
 								</div>
 							</article>
-							<article class="catalogbu__item item-catalogbu">
+							<article class="catalogbu__item item-catalogbu nal nov 2003">
 								<div class="item-catalogbu__labels">
 									<div class="item-catalogbu__label label">VIN-номера проверены</div>
 									<div class="item-catalogbu__label label">VIN-номера проверены</div>
@@ -197,7 +199,7 @@
 									<a href="#" class="item-catalogbu__button button">Полные характеристики</a>
 								</div>
 							</article>
-							<article class="catalogbu__item item-catalogbu">
+							<article class="catalogbu__item item-catalogbu nal prob2 2010">
 								<div class="item-catalogbu__labels">
 									<div class="item-catalogbu__label label">VIN-номера проверены</div>
 									<div class="item-catalogbu__label label">VIN-номера проверены</div>
@@ -226,7 +228,7 @@
 									<a href="#" class="item-catalogbu__button button">Полные характеристики</a>
 								</div>
 							</article>
-							<article class="catalogbu__item item-catalogbu">
+							<article class="catalogbu__item item-catalogbu not-nal prob1 2009">
 								<div class="item-catalogbu__labels">
 									<div class="item-catalogbu__label label">VIN-номера проверены</div>
 									<div class="item-catalogbu__label label">VIN-номера проверены</div>
@@ -255,7 +257,7 @@
 									<a href="#" class="item-catalogbu__button button">Полные характеристики</a>
 								</div>
 							</article>
-							<article class="catalogbu__item item-catalogbu">
+							<article class="catalogbu__item item-catalogbu nal nov 2015">
 								<div class="item-catalogbu__labels">
 									<div class="item-catalogbu__label label">VIN-номера проверены</div>
 									<div class="item-catalogbu__label label">VIN-номера проверены</div>

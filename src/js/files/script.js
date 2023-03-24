@@ -17,10 +17,10 @@ if(document.querySelector('.catalogjs')){
 
 
 
-	const selectOneLabel = document.querySelector('[data-id="1"] option').innerHTML;
-	const selectTwoLabel = document.querySelector('[data-id="2"] option').innerHTML;
-	const selectThreeLabel = document.querySelector('[data-id="3"] option').innerHTML;
-	const selectFourLabel = document.querySelector('[data-id="4"] option').innerHTML;
+	// const selectOneLabel = document.querySelector('[data-id="1"] option').innerHTML;
+	// const selectTwoLabel = document.querySelector('[data-id="2"] option').innerHTML;
+	// const selectThreeLabel = document.querySelector('[data-id="3"] option').innerHTML;
+	// const selectFourLabel = document.querySelector('[data-id="4"] option').innerHTML;
 
 	document.addEventListener("click", documentactions);
 
@@ -254,116 +254,116 @@ if(document.querySelector('.catalogjs')){
 	//селект 1
 	//document.querySelector('.filter__body').addEventListener('click', filterSelect)
 	//function filterSelect(filterstype) {
-	selectOne.addEventListener('click', a)
-	function a(e) {
-		if (e.target.closest('[data-id="1"]')) {
-			//for (const qwee in filters){
-			//filters[qwee].onchange = () => {
-			//console.log(filters[qwee]);
-			document.addEventListener('selectCallback', aaa)
-			function aaa(e) {
-				const value = e.detail.select.value;
-				console.log(value);
-				const filteredCards = cardsData.filter(card => {
-					const reg = new RegExp(value);
-					console.log(reg);
-					if (reg.test(card.options)) {
-						return true
-					} else {
-						return false
-					}
-				})
-				console.log(filteredCards);
-				results.innerHTML = generateCard(filteredCards).join('')
+	// selectOne.addEventListener('click', a)
+	// function a(e) {
+	// 	if (e.target.closest('[data-id="1"]')) {
+	// 		//for (const qwee in filters){
+	// 		//filters[qwee].onchange = () => {
+	// 		//console.log(filters[qwee]);
+	// 		document.addEventListener('selectCallback', aaa)
+	// 		function aaa(e) {
+	// 			const value = e.detail.select.value;
+	// 			console.log(value);
+	// 			const filteredCards = cardsData.filter(card => {
+	// 				const reg = new RegExp(value);
+	// 				console.log(reg);
+	// 				if (reg.test(card.options)) {
+	// 					return true
+	// 				} else {
+	// 					return false
+	// 				}
+	// 			})
+	// 			console.log(filteredCards);
+	// 			results.innerHTML = generateCard(filteredCards).join('')
 
-			}
-		}
-	}
+	// 		}
+	// 	}
+	// }
 	//}
 	//filtersType.forEach(type=>filterSelect(type))
 
 
 	//селект 2
-	selectTwo.addEventListener('click', asd)
-	function asd(e) {
-		if (e.target.closest('[data-id="2"]')) {
+	// selectTwo.addEventListener('click', asd)
+	// function asd(e) {
+	// 	if (e.target.closest('[data-id="2"]')) {
 
-			document.addEventListener('selectCallback', filterCondition)
-			function filterCondition(e) {
-				const value = e.detail.select.value;
-				const filteredCards = cardsData.filter(card => {
-					const reg = new RegExp(value);
-					if (reg.test(card.condition)) {
-						return true
-					} else {
-						return false
-					}
-				})
-				results.innerHTML = generateCard(filteredCards).join('')
+	// 		document.addEventListener('selectCallback', filterCondition)
+	// 		function filterCondition(e) {
+	// 			const value = e.detail.select.value;
+	// 			const filteredCards = cardsData.filter(card => {
+	// 				const reg = new RegExp(value);
+	// 				if (reg.test(card.condition)) {
+	// 					return true
+	// 				} else {
+	// 					return false
+	// 				}
+	// 			})
+	// 			results.innerHTML = generateCard(filteredCards).join('')
 
-			}
-		}
-	}
+	// 		}
+	// 	}
+	// }
 
 	//селект 3
-	selectThree.addEventListener('click', dfg)
-	function dfg(e) {
-		if (e.target.closest('[data-id="3"]')) {
-			document.addEventListener('selectCallback', iop)
-			function iop(e) {
-				const value = e.detail.select.value;
-				const vbn = cardsData.filter(card => {
-					if ((card.year) >= value) {
-						return true
-					} else {
-						return false
-					}
-				})
-				results.innerHTML = generateCard(vbn).join('')
-			}
-		}
-	}
+	// selectThree.addEventListener('click', dfg)
+	// function dfg(e) {
+	// 	if (e.target.closest('[data-id="3"]')) {
+	// 		document.addEventListener('selectCallback', iop)
+	// 		function iop(e) {
+	// 			const value = e.detail.select.value;
+	// 			const vbn = cardsData.filter(card => {
+	// 				if ((card.year) >= value) {
+	// 					return true
+	// 				} else {
+	// 					return false
+	// 				}
+	// 			})
+	// 			results.innerHTML = generateCard(vbn).join('')
+	// 		}
+	// 	}
+	// }
 
 	//селект 4
-	selectFour.addEventListener('click', fgh)
-	function fgh(e) {
-		if (e.target.closest('[data-id="4"]')) {
-			document.addEventListener('selectCallback', op)
-			function op(e) {
-				const value = e.detail.select.value;
-				const bnm = cardsData.filter(card => {
-					if ((card.year) <= value) {
-						return true
-					} else {
-						return false
-					}
-				})
-				results.innerHTML = generateCard(bnm).join('')
-			}
-		}
-	}
+	// selectFour.addEventListener('click', fgh)
+	// function fgh(e) {
+	// 	if (e.target.closest('[data-id="4"]')) {
+	// 		document.addEventListener('selectCallback', op)
+	// 		function op(e) {
+	// 			const value = e.detail.select.value;
+	// 			const bnm = cardsData.filter(card => {
+	// 				if ((card.year) <= value) {
+	// 					return true
+	// 				} else {
+	// 					return false
+	// 				}
+	// 			})
+	// 			results.innerHTML = generateCard(bnm).join('')
+	// 		}
+	// 	}
+	// }
 
 	//Чекбокс-переключатель
 	let checkActive = ''
-	const label = document.querySelector('label')
+	//const label = document.querySelector('label')
 
-	label.addEventListener('click', check)
+	//label.addEventListener('click', check)
 
-	function check() {
-		setTimeout(function () {
-			checkActive = document.querySelector('#transmission > .active')
-			const rgx = new RegExp(checkActive.innerHTML);
-			let checks = cardsData.filter(card => {
-				if (rgx.test(card.transmission)) {
-					return true
-				} else {
-					return false
-				}
-			})
-			results.innerHTML = generateCard(checks).join('')
-		}, 10
-		)
-	}
+	// function check() {
+	// 	setTimeout(function () {
+	// 		checkActive = document.querySelector('#transmission > .active')
+	// 		const rgx = new RegExp(checkActive.innerHTML);
+	// 		let checks = cardsData.filter(card => {
+	// 			if (rgx.test(card.transmission)) {
+	// 				return true
+	// 			} else {
+	// 				return false
+	// 			}
+	// 		})
+	// 		results.innerHTML = generateCard(checks).join('')
+	// 	}, 10
+	// 	)
+	// }
 
 
 
@@ -502,30 +502,30 @@ var buttonFilter;
 var qsRegex;
 
 // init Isotope
-var $grid = $('.results__body').isotope({
-  itemSelector: '.catalogbu__item',
-  layoutMode:'fitRows',
-  fitRows:{gutter:18},
-  filter: function() {
-    var $this = $(this);
-    var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
-    var buttonResult = buttonFilter ? $this.is( buttonFilter ) : true;
-    return searchResult && buttonResult;
-  },
-});
+// var $grid = $('.results__body').isotope({
+//   itemSelector: '.catalogbu__item',
+//   layoutMode:'fitRows',
+//   fitRows:{gutter:18},
+//   filter: function() {
+//     var $this = $(this);
+//     var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
+//     var buttonResult = buttonFilter ? $this.is( buttonFilter ) : true;
+//     return searchResult && buttonResult;
+//   },
+// });
 
-$('.filters').on( 'click', '.button', function() {
-  var $this = $(this);
-  // get group key
-  var $buttonGroup = $this.parents('.button-group');
-  var filterGroup = $buttonGroup.attr('data-filter-group');
-  // set filter for group
-  buttonFilters[ filterGroup ] = $this.attr('data-filter');
-  // combine filters
-  buttonFilter = concatValues( buttonFilters );
-  // Isotope arrange
-  $grid.isotope();
-});
+// $('.filters').on( 'click', '.button', function() {
+//   var $this = $(this);
+//   // get group key
+//   var $buttonGroup = $this.parents('.button-group');
+//   var filterGroup = $buttonGroup.attr('data-filter-group');
+//   // set filter for group
+//   buttonFilters[ filterGroup ] = $this.attr('data-filter');
+//   // combine filters
+//   buttonFilter = concatValues( buttonFilters );
+//   // Isotope arrange
+//   $grid.isotope();
+// });
 
 // use value of search field to filter
 var $quicksearch = $('.quicksearch').keyup( debounce( function() {
@@ -543,13 +543,13 @@ $('.button-group').each( function( i, buttonGroup ) {
 });
   
 // flatten object by concatting values
-function concatValues( obj ) {
-  var value = '';
-  for ( var prop in obj ) {
-    value += obj[ prop ];
-  }
-  return value;
-}
+// function concatValues( obj ) {
+//   var value = '';
+//   for ( var prop in obj ) {
+//     value += obj[ prop ];
+//   }
+//   return value;
+// }
 
 // debounce so filtering doesn't happen every millisecond
 function debounce( fn, threshold ) {
@@ -565,6 +565,46 @@ function debounce( fn, threshold ) {
     timeout = setTimeout( delayed, threshold );
   };
 }
+
+
+var filterValue;
+var filters = {};
+var $grid = $('.grid').isotope({
+	itemSelector: '.catalogbu__item',
+	layoutMode:'fitRows',
+	fitRows:{gutter:18},
+	filter: function() {
+		    var $this = $(this);
+		    var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
+		    var buttonResult = filterValue ? $this.is( filterValue ) : true;
+		    return searchResult && buttonResult;
+		  }
+ });
+ 
+
+
+$('.filters').on( 'change', function( event ) {
+  var $select = $( event.target );
+  console.log($('.filters'));
+  // get group key
+  var filterGroup = $select.attr('value-group');
+  // set filter for group
+  filters[ filterGroup ] = event.target.value;
+  // combine filters
+  filterValue = concatValues( filters );
+  // set filter for Isotope
+  $grid.isotope({ filter: filterValue });
+});
+
+// flatten object by concatting values
+function concatValues( obj ) {
+  var value = '';
+  for ( var prop in obj ) {
+    value += obj[ prop ];
+  }
+  return value;
+}
+
 
 
 
