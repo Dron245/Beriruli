@@ -3,6 +3,7 @@ import { isMobile } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
 //import { cardsData } from "./data.js"
+
 if(document.querySelector('.catalogjs')){
 	const buttonHeader = document.querySelector('.header__event');
 	const actionsHeader = document.querySelector('.event__text ')

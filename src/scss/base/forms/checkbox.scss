@@ -53,5 +53,8 @@
 		justify-self: flex-start;
 		text-align: left;
 		padding-left: rem(20);
+		@media (max-width:$mobile){
+			 flex: 1 0 auto; 
+		}
 	}
 }

@@ -2,11 +2,15 @@
 .button{
 	display: inline-block;
 	font-weight: 900;
-	font-size: rem(18);
+	//font-size: rem(18);
+	@include adaptiveValue("font-size", 18, 12,1920,320,1);
 	line-height: math.div(26 , 18);
 	letter-spacing: 0.05em;
 	background: $mainBlue;
-	padding: rem(20) rem(45);
+	padding-top: rem(20);
+	padding-bottom: rem(20);
+	@include adaptiveValue("padding-left", 45, 20,1920,320,1);
+	@include adaptiveValue("padding-right", 45, 20,1920,320,1);
 	border-radius: rem(5);
 	color:white
 }
