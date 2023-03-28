@@ -159,9 +159,7 @@
 
 	&__filter {
 		margin-top: rem(10);
-		@media (max-width:$mobile){
-			 margin-top: 0; 
-		}
+		
 	}
 }
 .filter {
@@ -169,16 +167,16 @@
 	// .filter__container
 
 	&__container {
-		padding: 0px 0px;
+		//padding: 0px 0px;
 	}
 
 	&__body{
 		@media (min-width:$mobile){
 			 display: flex;
 			justify-content: space-between;
-			
+			align-items: center;
 			column-gap: rem(10);
-			row-gap: rem(80);
+			row-gap: rem(10);
 			 @media (max-width:$pc){
 				justify-content: center;
 				 flex-wrap: wrap;
@@ -244,8 +242,8 @@
 		display: flex;
 		gap: rem(10);
 		align-items: flex-start;
-		p{
-			transform:translateY(18px);
+		span{
+			//transform:translateY(18px);
 			@media (max-width:$mobileSmall){
 				 margin-bottom: rem(15); 
 			}
@@ -271,7 +269,7 @@
 	&__switch{
 		display: flex;
 		gap: rem(10);
-		transform:translateY(18px);
+		//transform:translateY(18px);
 		@media (max-width:$mobile){
 			 justify-content: center;
 			 

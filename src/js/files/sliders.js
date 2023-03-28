@@ -44,7 +44,7 @@ function initSliders() {
 	bildSliders();
 	// Перечень слайдеров
 	// Проверяем, есть ли слайдер на стронице
-	if (document.querySelector('.ddd')) { // Указываем скласс нужного слайдера
+	if (document.querySelector('.catalogbu__slider')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
 		new Swiper('.catalogbu__slider', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
@@ -275,13 +275,20 @@ function initSlidersTwo() {
 		}
 	}
 
-window.onload = function(){
-	if(window.innerWidth<991.98 && document.querySelector('.catalogbu__slider')){
-		if(document.querySelector('.catalogbu__slider')){
-		document.querySelector('.catalogbu__slider').classList.add('ddd');
-		initSliders();};
+window.onload = function(e){
+	window.onresize = function (){
+		console.log('123');
+		if (window.innerWidth<991.98) {
+			document.querySelector('.catalogbu__slider').classList.add('ddd');
+		} else document.querySelector('.catalogbu__slider').classList.remove('ddd');
 		
-	} else initSlidersTwo();
+	}
+	//if(window.innerWidth<991.98 && document.querySelector('.catalogbu__slider')){
+		//document.querySelector('.catalogbu__slider').classList.add('ddd');
+		//initSliders();
+		console.log(e);
+		
+	// } else initSlidersTwo();
 	if(window.innerWidth>991.98 && document.querySelector('.catalogbu__slider')){
 		document.querySelector('.catalogbu__slider').classList.remove('ddd')
 	}
@@ -321,8 +328,15 @@ window.onload = function(){
 
 
 window.addEventListener("load", function (e) {
+	window.onresize = function(){
+		console.log('456');
+		if (window.innerWidth<991.98) {
+			console.log('789');
+			initSliders();
+		}
+	}
 	// Запуск инициализации слайдеров
-	initSliders();
+	
 	// Запуск инициализации скролла на базе слайдера (по классу swiper_scroll)
 	//initSlidersScroll();
 });

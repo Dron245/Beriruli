@@ -331,7 +331,7 @@
 		position: relative;
 		display: flex;
 		//padding-top: rem(15);
-		margin-top: 10px;
+		//margin-top: 10px;
 		flex-direction: column;
 		justify-content: space-between;
 		
@@ -354,6 +354,19 @@
 			}
 			@media (max-width:$mobile){
 			 width: 98%; 
+			}
+		}
+		article:nth-of-type(n+4) {
+			margin-top: 10px;
+		}
+		@media (max-width: em(1119)){
+			article:nth-of-type(n+3) {
+				margin-top: 10px;
+			}
+		}
+		@media (max-width:$mobile){
+			article:nth-of-type(n+2) {
+				margin-top: 10px;
 			}
 		}
 	}

@@ -3,7 +3,10 @@ import { isMobile } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
 //import { cardsData } from "./data.js"
-
+AOS.init({
+	easing: 'ease-out-back',
+	duration: 700,
+});
 if(document.querySelector('.catalogjs')){
 	const buttonHeader = document.querySelector('.header__event');
 	const actionsHeader = document.querySelector('.event__text ')
@@ -36,7 +39,7 @@ if(document.querySelector('.catalogjs')){
 						</div>
 					</div>`;
 
-		{
+		console.log(e);
 			if (targetElement.closest('.event__close')) {
 				buttonHeader.style.height = 0;
 				actionsHeader.style = "display:none";
@@ -65,7 +68,7 @@ if(document.querySelector('.catalogjs')){
 				meh.forEach(element => {
 					element.classList.toggle('_active')
 				});
-			};
+			
 		}
 
 
@@ -570,17 +573,40 @@ function debounce( fn, threshold ) {
 
 var filterValue;
 var filters = {};
+var filterFns = {
+	greaterthan2009: function() {
+		console.log(this);
+				var number = $(this).find('.number').text();
+				return parseInt( number, 10 ) > 2009;
+			 },
+ }
+
 var $grid = $('.grid').isotope({
 	itemSelector: '.catalogbu__item',
 	layoutMode:'fitRows',
 	fitRows:{gutter:18},
 	filter: function() {
+			var isMatched = true;
 		    var $this = $(this);
 		    var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
 		    var buttonResult = filterValue ? $this.is( filterValue ) : true;
+			 for ( var prop in filters ) {
+      var filter = filters[ prop ];
+      // use function if it matches
+      filter = filterFns[ filter ] || filter;
+      // test each filter
+      if ( filter ) {
+        isMatched = isMatched && $(this).is( filter );
+      }
+      // break if not matched
+      if ( !isMatched ) {
+        break;
+      }
+    }
 		    return searchResult && buttonResult;
 		  }
  });
+ 
  
 
 
@@ -590,9 +616,11 @@ $('.filters').on( 'change', function( event ) {
   // get group key
   var filterGroup = $select.attr('value-group');
   // set filter for group
+  
   filters[ filterGroup ] = event.target.value;
   // combine filters
   filterValue = concatValues( filters );
+  console.log(filterValue);
   // set filter for Isotope
   $grid.isotope({ filter: filterValue });
 });
