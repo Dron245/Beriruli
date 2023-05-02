@@ -286,7 +286,7 @@ window.onload = function(e){
 	//if(window.innerWidth<991.98 && document.querySelector('.catalogbu__slider')){
 		//document.querySelector('.catalogbu__slider').classList.add('ddd');
 		//initSliders();
-		console.log(e);
+		//console.log(e);
 		
 	// } else initSlidersTwo();
 	if(window.innerWidth>991.98 && document.querySelector('.catalogbu__slider')){

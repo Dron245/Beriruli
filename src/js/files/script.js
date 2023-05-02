@@ -546,14 +546,7 @@ $('.button-group').each( function( i, buttonGroup ) {
   });
 });
   
-// flatten object by concatting values
-// function concatValues( obj ) {
-//   var value = '';
-//   for ( var prop in obj ) {
-//     value += obj[ prop ];
-//   }
-//   return value;
-// }
+
 
 // debounce so filtering doesn't happen every millisecond
 function debounce( fn, threshold ) {
@@ -590,6 +583,7 @@ var $grid = $('.grid').isotope({
 		    var $this = $(this);
 		    var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
 		    var buttonResult = filterValue ? $this.is( filterValue ) : true;
+			 
 			 for ( var prop in filters ) {
       var filter = filters[ prop ];
       // use function if it matches
@@ -603,8 +597,9 @@ var $grid = $('.grid').isotope({
         break;
       }
     }
-		    return searchResult && buttonResult;
-		  }
+	 		
+		    return searchResult && buttonResult && isMatched;
+		  } 
  });
  
  
@@ -620,8 +615,9 @@ $('.filters').on( 'change', function( event ) {
   filters[ filterGroup ] = event.target.value;
   // combine filters
   filterValue = concatValues( filters );
-  console.log(filterValue);
+  console.log({ filter: filterValue } );
   // set filter for Isotope
+
   $grid.isotope({ filter: filterValue });
 });
 
